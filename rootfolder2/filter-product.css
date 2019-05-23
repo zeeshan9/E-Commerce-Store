@@ -1,0 +1,31 @@
+#myCarousel{
+    /* margin-left: 50%; */
+    max-width: 100%;
+    max-height: 100%;
+    float: left;
+}
+.input_price{
+    float: left;
+    display: block;
+    width: 70px;
+    height: 30px;
+    padding: 0 7px;
+    text-align: left;
+    color: #404040;
+    border: 1px solid #a8a8a8;
+    border-radius: 3px;
+    outline: 0;
+    background-color: #fff;
+    
+}
+.checked {
+    color: orange;
+  }
+.textcolor{
+    /* background:linear-gradient(to bottom left, #003366 0%, #33cccc 100%);  */
+    color: linear-gradient(to bottom left, #003366 0%, #33cccc 100%);
+  }
+  /* #textcol{
+    color: linear-gradient(to bottom left, #003366 0%, #33cccc 100%);
+} */
+  

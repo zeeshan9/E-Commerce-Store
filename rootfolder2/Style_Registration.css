@@ -1,0 +1,26 @@
+
+#boundary, #row-heading{
+  background: #9e9e9e33;
+  color:  linear-gradient(to bottom left, #003366 0%, #33cccc 100%);
+  /* max-height: 1100px; */
+}
+.outer-row1 {
+  margin-top: 80px;
+  margin-left: 200px;
+  margin-right: 80px;
+
+  height: fit-content;
+  width: fit-content;
+  /* float: inherit; */
+  
+}
+.innerrow{
+  margin-top: 80px;
+  margin-left: 17px;
+  margin-right: 80px;
+
+  height: fit-content;
+  width: 130%;
+  /* float: inherit; */
+  
+}

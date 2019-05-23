@@ -1,0 +1,429 @@
+.container-fluid{
+    background-color: #f1f1f1;
+}
+
+
+/* header-bar Styling */
+
+.header-bar{
+    /* background-image: linear-gradient(#141e30,#243b55); */
+    background-color: #222;
+}
+
+
+.grid a{
+    margin-top: 5px;
+    
+    height: 150px;
+
+}
+
+.grid{
+    display: grid;
+    width: 100%;
+
+    grid-template-columns: 30% 1fr 1fr;
+    grid-template-rows: 30% 1fr 1fr;
+    grid-area: 
+    "card navBar ."
+    "card belowNav belowNav";
+}
+
+.navBar{
+    height: 75px;
+}
+
+.navBar button{
+    background-color: #ddd !important;
+}
+/* 
+.navBar :first-child{
+    margin: 0;
+    position: absolute;               
+    top: 50%;                         
+    transform: translate(0, -50%)
+    
+} */
+
+.dropdown button{
+
+}
+
+/* header-bar Styling */
+
+
+/* thumbnail Styling Start */
+.item-pics{
+    height: max-content;
+
+    padding: 20px;
+    margin: 10px;
+    border-right: 2px solid orange;
+
+    background-color: white;
+}
+
+.img-item-lg{
+    padding: 10px;
+
+    border-bottom: 1px solid orange;
+}
+
+.img-item-lg img{
+    padding: 20px;
+    margin: 20px;
+
+    align-self: center;
+
+}
+
+.collection-thumbnail{
+
+    padding: 10px;
+
+    width: 100%;
+    height: 100px;
+
+    border-bottom: 1px solid orange;
+}
+
+.collection-thumbnail div{
+    display: inline-block;
+}
+
+.thumbnail{
+    padding: 10px;
+    margin: 5px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.collection-thumbnail :hover{
+    border: 1px solid orange;
+}
+
+
+
+/* thumbnail Styling End */
+
+
+/* overall item des Styling Start */
+
+.item-data{
+    width: 65%;
+
+    float: left;
+
+    padding: 20px;
+    margin: 10px;
+
+    background-color: white;
+}
+
+/* item company related */
+
+.company-related{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid orange;
+
+    height: max-content;
+}
+
+.item-name{
+    width: 100%;
+}
+
+.item-company-name{
+    padding: 20px;
+    padding-top: 0px;
+    margin-left: 0px;
+}
+
+/* item company related */
+
+
+/* item related */
+.item-related{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid orange;
+
+    height: max-content;
+}
+
+.item-price{
+    margin-top: 15px;
+    font-size: 20px;
+
+    width: 100%;
+    display: inline-block;
+}
+
+.item-price :last-child{
+    font-weight: bold;
+}
+
+.color-item{
+    margin-top: 15px;
+}
+
+.color-item label{
+    padding: 10px;
+    padding-left: 0px;
+    margin: 5px;
+
+}
+
+.color-item div{
+    width: 20px;
+    height: 20px;
+
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+
+    display: inline-block;
+}
+
+.color-item div :hover{
+    border: 2px solid orange;
+}
+
+.size-item{
+    margin-top: 15px;
+}
+
+.size-item label{
+    padding: 10px;
+    padding-left: 0px;
+    margin: 5px;
+}
+
+.size-item div{
+    display: inline-block;
+}
+
+.size-item a{
+    width: 100px;
+    height: 50px;
+
+    padding: 10px;
+    margin: 5px;
+    margin-left: 20px;
+    border: 1px dotted gray;
+    border-radius: 5px;
+    
+}
+
+.size-item div :hover{
+
+    text-decoration: none;          
+    border: 1px solid orange;
+}
+
+/* item realted */
+
+/* item description related */
+
+.des-item{
+    width: 100%;
+    height: 100%;
+
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid orange;
+}
+
+/* item description related */
+
+/* overall item des Styling End */
+
+
+/* item-shipping-menu Styling */
+
+.item-shipping-menu{
+    width: 30%;
+    height: max-content;
+
+    float: right;
+
+    margin: 10px;
+    border-left: 2px solid orange;
+
+    background-color: white;
+}
+
+/* delivery-options Styling  */
+
+.delivery-related{
+    margin: 15px;
+    padding: 5px;
+    padding-bottom: 20px;
+    
+
+    height: max-content ;
+}
+
+.delivery-options{
+    padding: 10px;
+
+    height: max-content;
+}
+
+.delivery-options label{
+    float: left;
+}
+
+.delivery-options img{
+    float: right;
+}
+
+.delivery-location{
+    margin-bottom: 20px;
+    border-bottom: 1px solid orange; 
+}
+
+.delivery-location button{
+    margin-bottom: 10px;
+    font-size: 20px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+}
+
+.delivery-location button img{
+    border-left: 1px solid #ddd;
+}
+
+.delivery-location p{
+    padding: 20px;
+    margin: 10px;   
+}
+
+.delivery-location-change{
+    padding: 20px;
+    height: 40px;
+}
+
+
+/* item-add-cart styling */
+
+.buy-quantity button{
+    padding: 0px !important;
+    width: 50px;
+    height: 50px;
+
+    background-color: #ddd;    
+}
+
+.buy-quantity #itemQuantity{
+    width: 20px;
+
+    text-align: center;
+}
+
+.buy-quantity button :hover{
+    opacity: .3;
+}
+
+.shopping{
+    height: max-content;
+    border-bottom: 1px solid orange;
+}
+
+.shopping button{
+    margin-top: 20px;
+    font-size: 20px;
+
+}
+
+.add-cart a{
+    padding: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.buy-now a{
+    padding: 10px;
+    border-right: 1px solid #ddd;
+
+}
+
+.item-supplier{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* item-add-cart styling */
+
+/* delivery-options Styling  */
+
+/* item-shipping-menu Styling */
+
+
+
+/* item-similar Styling */
+
+.item-similar{
+    height: max-content;
+
+    padding: 20px;
+    margin: 20px;
+    border-right: 2px solid orange;
+
+    background-color: white;
+}
+
+.item-similar label{
+    margin-top: 20px;
+}
+
+/* .item-posted{
+    width: 90%;
+    margin: 10px;
+    border-bottom: 1px solid orange !important;
+} */
+
+.card{
+    margin: 10px;
+    border: 0px !important;
+    border-radius: 0px !important;
+}
+
+.item-similar div{
+    border-bottom: 1px solid orange !important;
+}
+
+.card a{
+    margin: 10px;
+}
+
+.card :hover{
+    opacity: .5;
+}
+
+
+/* item-similar Styling */
+
+/* item-des-manufacturer */
+
+.item-manufacturer{
+    width: 95%;
+
+    float: left;
+
+    padding: 20px;
+    margin: 10px;
+    margin-top: 20px;
+
+    background-color: white;
+    border-left: 2px solid orange;
+}
+
+.item-manufacturer div{
+    border-bottom: 1px solid orange;
+}
