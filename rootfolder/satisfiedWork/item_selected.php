@@ -14,8 +14,8 @@
 
     <div class="container-fluid">
         <!-- Navigation Bar -->
-        <?php 
-            require_once("../../navbar.php"); 
+        <?php
+            require_once("../../navbar.php");
             $id = $_GET["id"];
         ?>
            
@@ -35,12 +35,8 @@
                             $imgName = $prodImg->GetProductPicture($id);
                             echo $imgName;
                             //echo "<img src='../../product_images/$imgName' alt='Product Image' width='100%'>";
-
-
                         ?>
-                    
                     </div>
-
             </div>
 
             <div class="col-lg-8">

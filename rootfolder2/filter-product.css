@@ -28,4 +28,10 @@
   /* #textcol{
     color: linear-gradient(to bottom left, #003366 0%, #33cccc 100%);
 } */
+.maxheight-div {
+   height:50%;
+}
+.padrow{
+  padding-top: 10%;
+}
   

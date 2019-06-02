@@ -33,14 +33,14 @@
               // "<img src='../product_images/$img[0]' alt='Product Image' width='100%'>";
               
           ?>
-    <div class="container-fluid" id="courasal" >
-        <div class="row" >
-          <div class="col-sm-3 maxheight-div" >
-            <div class="container-fluid">
-              <div class="row" >
-                <div class="col-md-6" >
+    <div class="container-fluid" id="courasal">
+        <div class="row">
+          <div class="col-sm-3" >
+          <div class="container-fluid maxheight-div" >
+              <div class="row padrow">
+                <div class="col-md-6">
                 <?php
-                    echo "<img src='../product_images/$img[0]' alt='Product Image' width='100%'>";  
+                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
                 ?>
                 </div>
                 <div class="col-md-6">
@@ -51,16 +51,16 @@
               </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="row" >
-                  <div class="col-md-6" >
+            <div class="container-fluid maxheight-div">
+              <div class="row padrow">
+                  <div class="col-md-6">
                   <?php
-                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
+                    echo "<img src='../product_images/$img[3]' alt='Product Image' width='100%'>";  
                    ?>
                   </div>
                   <div class="col-md-6">
                   <?php
-                                    echo "<img src='../product_images/$img[0]' alt='Product Image' width='100%'>";  
+                                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
                                 ?>
                   </div>
                 </div>
@@ -120,7 +120,7 @@
               </div>
     </div>
     <!-- Products Row Section-->
-    <div class="container-fluid product-row-boundary">
+    <div class="container-fluid product-row-boundary" style="margin:2%">
       <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
@@ -135,52 +135,51 @@
         <div class="row inner-row">
           
                                <!-- Product items -->
-        <form action="" >
-        <?php 
-        for ($i=0; $i <= 5; $i++) { 
-          ?>
-        
-        <div class="col-sm-2 pad">
-              <!-- //onclick="productDesc($id[$i])"" -->
-              <div class="center- div" href="item_selected.php?id=". $id[$i]>
-                  <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
-                    ?>
-                  </div>
-                  <div class="card-jfy-item-desc"> 
-                          
-                  <div class="card-jfy-title">
-                  <span class="title" onclick="productDesc()">
-                    <?php echo $name[$i]; ?>
-                    </span>
+        <!-- <form action="" > -->
+            <?php 
+            for ($i=0; $i <= 5; $i++) { 
+            ?>     
+            <div class="col-sm-2 pad">
+                  <!-- //onclick="productDesc($id[$i])"" -->
+                  <div class="center- div" href="item_selected.php?id=". $id[$i]>
+                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
+                        <?php
+                          echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
+                        ?>
+                      </div>
+                      <div class="card-jfy-item-desc"> 
+                              
+                      <div class="card-jfy-title">
+                      <span class="title" onclick="productDesc()">
+                        <?php echo $name[$i]; ?>
+                        </span>
+                        </div>
+                    
+                      <div class="hp-mod-price textstyle">
+                    
+                      <div class="hp-mod-price-second-line">
+                        <span >Rs <?php echo $price[$i]; ?> -40%</span> 
+                      </div>
+
+                      </div>     
+                      <div class="card-jfy-footer">
+                        <p class="textstyle">rating</p>
+                      </div>
                     </div>
-                 
-                  <div class="hp-mod-price textstyle">
-                
-                  <div class="hp-mod-price-second-line">
-                     <span >Rs <?php echo $price[$i]; ?> -40%</span> 
-                  </div>
 
-                  </div>     
-                  <div class="card-jfy-footer">
-                     <p class="textstyle">rating</p>
-                  </div>
-                </div>
-
-          </div>
-      </div>
-              <?php
-              }
-              ?>
-</form>
+              </div>
+            </div>
+            <?php
+            }
+            ?>
+          <!-- </form> -->
             
         </div>
       </div>
     </div>
 
               <!--            Next Row                 -->
-    <div class="container-fluid product-row-boundary">
+    <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
           <h3>Weekly Deals</h3>
           
@@ -191,12 +190,12 @@
         for ($i=7; $i <= 12; $i++) { 
           ?>
         
-        <div class="col-sm-2 pad">
+        <div class="col-sm-2 pad" >
               
               <div class="center- div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                     <?php
-                      echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
+                      echo "<img src='../product_images/$img[$i]'   alt='Product Image' width='100%'>";  
                     ?>
                   </div>
                   <div class="card-jfy-item-desc"> 
@@ -233,7 +232,7 @@
       </div>
 
       <!--            Next Row                 -->
-    <div class="container-fluid product-row-boundary">
+    <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
           <h3>Weekly Deals</h3>
           
@@ -249,7 +248,7 @@
               <div class="center- div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                     <?php
-                      echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
+                      echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
                     ?>
                   </div>
                   <div class="card-jfy-item-desc"> 
@@ -284,7 +283,7 @@
       </div>
 
        <!--            Next Row                 -->
-       <div class="container-fluid product-row-boundary">
+       <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
           <h3>Weekly Deals</h3>
           
@@ -300,7 +299,7 @@
               <div class="center- div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                     <?php
-                      echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
+                      echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
                     ?>
                   </div>
                   <div class="card-jfy-item-desc"> 
