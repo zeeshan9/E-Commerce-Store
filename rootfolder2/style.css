@@ -96,8 +96,8 @@ div.inline {
 }
 .center-div{
     /* padding-left: 3px; */
-    /* padding-top: 10px; */
-    /* background:whitesmoke; */
+    padding-top: 10px;
+    background:whitesmoke;
     /* background:; */
     background-attachment: fixed;
 }
@@ -166,6 +166,9 @@ div.inline {
 .card-jfy-title,.textstyle {
     color: #ec830be8;
     font-weight:bold;    
+}
+.title{
+    color: #ec830be8;
 }
 .maxheight-div {
     height:50%;

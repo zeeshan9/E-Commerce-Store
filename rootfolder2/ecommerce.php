@@ -141,7 +141,7 @@
             ?>     
             <div class="col-sm-2 pad">
                   <!-- //onclick="productDesc($id[$i])"" -->
-                  <div class="center- div" href="item_selected.php?id=". $id[$i]>
+                  <div class="center-div">
                       <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                         <?php
                           echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
@@ -150,8 +150,9 @@
                       <div class="card-jfy-item-desc"> 
                               
                       <div class="card-jfy-title">
-                      <span class="title" onclick="productDesc()">
-                        <?php echo $name[$i]; ?>
+                      <span >
+                      <a class="title" href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" ><span> <?php echo $name[$i]; ?> </span> </a>
+                        
                         </span>
                         </div>
                     
@@ -192,7 +193,7 @@
         
         <div class="col-sm-2 pad" >
               
-              <div class="center- div">
+              <div class="center-div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                     <?php
                       echo "<img src='../product_images/$img[$i]'   alt='Product Image' width='100%'>";  
@@ -245,7 +246,7 @@
         
         <div class="col-sm-2 pad">
               
-              <div class="center- div">
+              <div class="center-div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                     <?php
                       echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
@@ -296,7 +297,7 @@
         
         <div class="col-sm-2 pad">
               
-              <div class="center- div">
+              <div class="center-div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                     <?php
                       echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
@@ -335,8 +336,27 @@
 
 
       <script>
-        function productDesc(product_id) {
         
+        $(document).ready(function()
+        {
+          $(".title").mouseover(function(){
+           
+          $(".title").css("font-size", "12px");
+          
+          });
+          
+          $(".title").mouseout(function(){
+          
+            $(".title").css("font-size", "10px");
+          
+          });
+        });
+
+
+
+        function productDesc(Prod_title) {
+          echo "abcd ".Prod_title;
+          $(.Prod_title).css("font-size", "12px");
         }
         document.getElementById("demo").innerHTML = myFunction(4, 3);
         </script>
