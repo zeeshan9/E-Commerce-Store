@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add New Product</title>
-    
-
+    <script src="../jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="add_res_admin_css.css">
     <link rel="stylesheet" href="../normalized_style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -203,23 +202,7 @@
 
     </div>
 
-                            <script>
-                                function showbrand(str) {
-                                    var xhttp;  
-                                    if (str == "") {
-                                        //change will occur here
-                                        document.getElementById("test").innerHTML = "";
-                                        return;
-                                    }
-                                    xhttp = new XMLHttpRequest();
-                                    xhttp.onreadystatechange = function() {
-                                        if (this.readyState == 4 && this.status == 200) {
-                                        document.getElementById("test").innerHTML = this.responseText;
-                                        }
-                                    };
-                                    xhttp.open("GET", "select_brand_type.php?q=" + str, true);
-                                    xhttp.send();
-                                }
-                            </script>
+    <script src="add-res-admin.js"></script>
+
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="filter-product.css">
+    <script src="../jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <style>
@@ -15,7 +16,7 @@
   }
 </style>
 </head>
-<body style=" background-color: #f5f5f5, color linear-gradient(to bottom left, #003366 0%, #33cccc 100%)">
+<body style=" background-color: #f5f5f5">
 <?php
               require_once("navbar.php");
               
@@ -53,15 +54,15 @@
           ?>
     <div class="container-fluid" id="courasal" >
         <div class="row" >
-          <div class="col-sm-3 maxheight-div" >
-            <div class="container-fluid">
-              <div class="row" >
+          <div class="col-sm-3">
+            <div class="container-fluid maxheight-div">
+              <div class="row padrow" >
                 <div class="col-md-6" >
                 <?php
                     echo "<img src='../product_images/$img[0]' alt='Product Image' width='100%'>";  
                 ?>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 " >
                 <?php
                     echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
                 ?>               
@@ -69,8 +70,8 @@
               </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="row" >
+            <div class="container-fluid maxheight-div" >
+                <div class="row padrow" >
                   <div class="col-md-6" >
                   <?php
                     echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
@@ -137,7 +138,7 @@
               </div>
               </div>
     </div>
-    
+    <!-- ============== -->
     <div class="container-fluid product-row-boundary">
       <div class="container-fluid">
         
@@ -170,8 +171,7 @@
                     for ($bi=0; $bi < $b_index; ++$bi) {
                 ?>
                     <div class="productlist">    
-                    <!-- ?php $protypeid[$bi] ? -->
-                      <input type="checkbox" name="checkedproducts" value="<?php echo $protypeid[$bi]; ?>"
+                      <input type="checkbox" name="checkedproducts"  value="<?php echo $protypeid[$bi]; ?>"
                       style="margin: 7px" onclick="producttypeselected(this)">
                       <?php echo $bname[$bi]; ?>
                     </div>
@@ -182,17 +182,87 @@
                 </form>
               </div>
             </div>
-                    <div class="col-md-10" id="parentDiv">
+            <div class="col-md-10" id="parentDiv">
                              <!-- Product item 2 -->
                   <?php 
-                  for ($i=0; $i <= 4; $i++) { 
+                  for ($i=0; $i <= 5; $i++) { 
                   ?>
                     <div class="col-sm-2 pad">
                     <form action="" >
                         <div class="center-div">
                         <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
                           <?php
-                            echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
+                            echo "<img src='../product_images/$img[$i]' height='100%'  alt='Product Image' width='100%'>";  
+                          ?>
+                        </div>
+                            <div class="card-jfy-item-desc">
+                                    
+                            <div class="card-jfy-title">
+                            <span class="title" onclick="productDesc()"><?php echo $name[$i]; ?> </span>
+                          </div>
+                      
+                        <div class="hp-mod-price textstyle">
+                      
+                        <div class="hp-mod-price-second-line">
+                          <span >Rs <?php echo $price[$i]; ?> -40%</span> 
+                        </div>
+
+                        </div>  
+                        <div class="card-jfy-footer">
+                          <p class="textstyle">rating</p>
+                        </div>
+                              
+
+                              </div>
+                          </div>
+                          </form>
+                    </div>
+                    <?php
+                  }
+                  ?>
+                  </div>        <!-- End of Row -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid product-row-boundary">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-2">
+                <br>
+                  <h5 style="color: #ff6a00;">Warranty Type</h5>    
+                  <hr>
+                  
+              </div>
+              <div class="col-md-10">
+                    <h3 >Weekly Deals</h3>
+                    <hr style="color: black; size: 5px; margin-top: 25px">
+                </div>
+            </div>
+          <div class="row inner-row">
+           <div class="col-sm-2 pad">
+                <h4 style="margin: 7px; color: #ff6a00">Price</h4>
+                  <div>
+                      <input type="number" id="minprice" min="0" class="input_price" name="minprice" placeholder="Min"  style="margin: 7px">
+                    </div>
+                    <div>
+                        <input type="number" id="maxprice" min="0" class="input_price" name="maxprice" placeholder="Max" style="margin: 7px">
+                      </div>
+                      <br>
+                      <button type="button" class="btn btn-info" style="margin: 7px;" onclick="selectByPricing()">Apply</button>
+                  </div>  
+
+                                 <!-- Product item 2 -->
+            <div class="col-md-10" id="parentDiv">
+                  <?php 
+                  for ($i=6; $i <= 11; $i++) { 
+                  ?>
+                    <div class="col-sm-2 pad">
+                    <form action="" >
+                        <div class="center-div">
+                        <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
+                          <?php
+                            echo "<img src='../product_images/$img[$i]' height='100%' alt='Product Image' width='100%'>";  
                           ?>
                         </div>
                             <div class="card-jfy-item-desc">
@@ -214,7 +284,6 @@
                           <p class="textstyle">rating</p>
                         </div>
                               
-                  
 
                               </div>
                           </div>
@@ -223,84 +292,8 @@
                     <?php
                   }
                   ?>
-                         </div>        <!-- End of Row -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="container-fluid product-row-boundary">
-        <div class="container-fluid">
-          <div class="row">
-              <div class="col-md-2">
-                <br>
-                  <h5 style="color: #ff6a00;">Warranty Type</h5>
-                  <hr>
-                  
-              </div>
-              <div class="col-md-10">
-                    <h3 >Weekly Deals</h3>
-                    <hr style="color: black; size: 5px; margin-top: 25px">
-                </div>
-            </div>
-          <div class="row inner-row">
-              <div class="col-sm-2 pad">
-                  <form action="/action_page.php">
-                    <div>
-                      <h4 style="color: #ff6a00;">Warranty</h4>
-                    </div>
-                    <?php 
-            for ($wi=0; $wi <$w_index; $wi++) { 
-            ?>
-              
-              <div>
-                <input type="checkbox" name="vehicle" value="Bike" style="margin: 7px"><?php echo $w_name[$wi]; ?>
-              </div>
-              <?php
-            }
-            ?>
-                  </form>
-              </div>
-                                 <!-- Product item 2 -->
-                                 
-          <?php 
-            for ($i=5; $i <= 9; $i++) { 
-            ?>
-              <div class="col-sm-2 pad">
-              <form action="" >
-                  <div class="center-div">
-                  <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
-                    ?>
-                  </div>
-                      <div class="card-jfy-item-desc">
-                              
-                      <div class="card-jfy-title">
-                      <span class="title" onclick="productDesc()">
-                    <?php echo $name[$i]; ?>
-                    </span>
-                    </div>
-                 
-                  <div class="hp-mod-price textstyle">
-                
-                  <div class="hp-mod-price-second-line">
-                     <span >Rs <?php echo $price[$i]; ?> -40%</span> 
-                  </div>
+                  </div>        <!-- End of Row -->
 
-                  </div>  
-                  <div class="card-jfy-footer">
-                     <p class="textstyle">rating</p>
-                  </div>
-                        
-             
-
-                        </div>
-                    </div>
-                    </form>
-              </div>
-              <?php
-            }
-            ?>
             
                    
                                           <!-- End of Row -->
@@ -325,57 +318,67 @@
               </div>
           
           <div class="row inner-row">
-              <div class="col-sm-2 pad">
-                <h4 style="margin: 7px; color: #ff6a00">Price</h4>
-                  <div>
-                      <input type="number" min="0" class="input_price" name="vehicle" placeholder="Min" value="Bike" style="margin: 7px">
-                    </div>
+          <div class="col-sm-2 pad">
+                  <form action="/action_page.php">
                     <div>
-                        <input type="number" min="0" class="input_price" name="vehicle" placeholder="Max" value="Bike" style="margin: 7px">
-                      </div>
-                      <br>
-                      <button type="button" class="btn btn-info" style="margin: 7px;">Apply</button>
-              </div>
-                                 <!-- Product item 2 -->
-                                 <?php 
-            for ($i=10; $i <= 14; $i++) { 
-            ?>
-              <div class="col-sm-2 pad">
-              <form action="" >
-                  <div class="center-div">
-                  <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
-                    ?>
-                  </div>
-                      <div class="card-jfy-item-desc">
-                              
-                      <div class="card-jfy-title">
-                      <span class="title" onclick="productDesc()">
-                    <?php echo $name[$i]; ?>
-                    </span>
+                      <h4 style="color: #ff6a00;">Warrenties Available</h4>
                     </div>
-                 
-                  <div class="hp-mod-price textstyle">
-                
-                  <div class="hp-mod-price-second-line">
-                     <span >Rs <?php echo $price[$i]; ?> -40%</span> 
-                  </div>
-
-                  </div>  
-                  <div class="card-jfy-footer">
-                     <p class="textstyle">rating</p>
-                  </div>
-                        
-             
-
+                    <?php 
+                      for ($wi=0; $wi <$w_index; $wi++) { 
+                      ?>
+                        <div>
+                          <label  style="color: #d18631e8; margin: 5px" for=""> <?php echo $w_name[$wi]; ?></label>
+                          <!-- <input type="checkbox" name="vehicle" value="Bike" style="margin: 7px"> -->
                         </div>
-                    </div>
-                    </form>
+                        <?php
+                      }
+                      ?>
+                  </form>
               </div>
-              <?php
-            }
-            ?>
+
+                                 <!-- Product item 2 -->
+              <div class="col-md-10" id="parentDiv">
+                             <!-- Product item 2 -->
+                  <?php 
+                  for ($i=12; $i <= 17; $i++) { 
+                  ?>
+                    <div class="col-sm-2 pad">
+                    <form action="" >
+                        <div class="center-div">
+                        <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
+                          <?php
+                            echo "<img src='../product_images/$img[$i]' height='100%' alt='Product Image' width='100%'>";  
+                          ?>
+                        </div>
+                            <div class="card-jfy-item-desc">
+                                    
+                            <div class="card-jfy-title">
+                            <span class="title" onclick="productDesc()">
+                          <?php echo $name[$i]; ?>
+                          </span>
+                          </div>
+                      
+                        <div class="hp-mod-price textstyle">
+                      
+                        <div class="hp-mod-price-second-line">
+                          <span >Rs <?php echo $price[$i]; ?> -40%</span> 
+                        </div>
+
+                        </div>  
+                        <div class="card-jfy-footer">
+                          <p class="textstyle">rating</p>
+                        </div>
+                              
+
+                              </div>
+                          </div>
+                          </form>
+                    </div>
+                    <?php
+                  }
+                  ?>
+                  </div>        <!-- End of Row -->
+
                                           <!-- End of Row -->
           </div>
         </div>
@@ -388,8 +391,7 @@
                 <div class="col-md-2">
                   <br>
                   <h5 style="color: #ff6a00;">Ranking</h5>
-                    <hr>
-                    
+                  <hr>
                 </div>
                 <div class="col-md-10">
                       <h3 >Collections</h3>
@@ -399,7 +401,7 @@
           
           <div class="row inner-row">
               <div class="col-sm-2 pad">
-                  <h5 style="margin: 7px; color: #ff6a00;">Rating</h5>
+                  <!-- <h5 style="margin: 7px; color: #ff6a00;">Rating</h5>
                   
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
@@ -419,147 +421,59 @@
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star"></span>
                   <br>
-                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span> -->
                   
               </div>
                                  <!-- Product item 2 -->
-                                 <?php 
-            for ($i=15; $i <= 19; $i++) { 
-            ?>
-              <div class="col-sm-2 pad">
-              <form action="" >
-                  <div class="center-div">
-                  <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]'  alt='Product Image' width='100%'>";  
-                    ?>
-                  </div>
-                      <div class="card-jfy-item-desc">
-                              
-                      <div class="card-jfy-title">
-                      <span class="title" onclick="productDesc()">
-                    <?php echo $name[$i]; ?>
-                    </span>
-                    </div>
-                 
-                  <div class="hp-mod-price textstyle">
-                
-                  <div class="hp-mod-price-second-line">
-                     <span >Rs <?php echo $price[$i]; ?> -40%</span> 
-                  </div>
-
-                  </div>  
-                  <div class="card-jfy-footer">
-                     <p class="textstyle">rating</p>
-                  </div>
-                        
-             
-
+            <div class="col-md-10" id="parentDiv">
+                             <!-- Product item 2 -->
+                  <?php 
+                  for ($i=18; $i <= 23; $i++) { 
+                  ?>
+                    <div class="col-sm-2 pad">
+                    <form action="" >
+                        <div class="center-div">
+                        <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
+                          <?php
+                            echo "<img src='../product_images/$img[$i]' height='100%' alt='Product Image' width='100%'>";  
+                          ?>
                         </div>
+                            <div class="card-jfy-item-desc">
+                                    
+                            <div class="card-jfy-title">
+                            <span class="title" onclick="productDesc()">
+                          <?php echo $name[$i]; ?>
+                          </span>
+                          </div>
+                      
+                        <div class="hp-mod-price textstyle">
+                      
+                        <div class="hp-mod-price-second-line">
+                          <span >Rs <?php echo $price[$i]; ?> -40%</span> 
+                        </div>
+
+                        </div>  
+                        <div class="card-jfy-footer">
+                          <p class="textstyle">rating</p>
+                        </div>
+                              
+
+                              </div>
+                          </div>
+                          </form>
                     </div>
-                    </form>
-              </div>
-              <?php
-            }
-            ?>
+                    <?php
+                  }
+                  ?>
+                  </div>        <!-- End of Row -->
+
           
                                           <!-- End of Row -->
           </div>
         </div>
       </div>
-      <script src="../jquery-3.4.1.min.js"></script>
-      <script>
-
-              function producttypeselected(obj) 
-              {
-                debugger;
-                var checkedBoxes = [];
-                $.each($("div.productlist [type='checkbox']:checked"), function() 
-                { 
-                  checkedBoxes.push($(this).val());
-                });
-
-                var result = checkedBoxes.join();
-
-                $.get("../database/database_connections/ajaxGetProducts.php", {data:result}, function(data){
-                   
-                  var jsonConverted = JSON.parse(data);
-
-                  $("#parentDiv").html("");
-
-                  $.each(jsonConverted, function(index, value){
-                      
-                      $("#parentDiv").append(" <div class='col-sm-2 pad'><form action='' ><div class='center-div'><div class='card-jfy-image card-jfy-image-background J_GridImage' id='productimage'><img src='../product_images/"+value["picture"]+"'  alt='Product Image' width='100%'></div><div class='card-jfy-item-desc'><div class='card-jfy-title'><span class='title' value='"+value["id"]+"' onclick='productDesc(this)'></span></div><div class='hp-mod-price textstyle'><div class='hp-mod-price-second-line'><span >Rs "+value["price"]+"  -40%</span></div></div><div class='card-jfy-footer'><p class='textstyle'>rating</p></div></div></div></form></div>");
-                    });
-                });
-
-
-                // var el = document.getElementById('productlist');
-                // var tops = el.children;
-                
-                // for (var i=0, len=tops.length; i<6; i++) {
-                //   // alert("tops " + tops.value);
-                //     if ( tops[i].type === 'checkbox' ) {
-                //         tops[i].onclick = function() {
-                //           // updatelist();
-                //           alert("tops " + tops.value);
-
-                //             // put your awesome code here
-                //         }
-                //     }
-                //}
-                // document.getElementById('checkproduct').onclick = function(){
-                //   var border = document.getElementsByClassName("ischecked");
-                //     for(i=0;i < border.length; i++)
-                //     {
-                //       border[i].checked = (this.checked)? alert(border[i]) : false;
-                //     }
-                //   }
-                //     var border = document.getElementsByClassName("ischecked");
-                //     for(i=0;i < border.length; i++)
-                //     {
-                //     border[i].addEventListener("click", function() {
-                //       if (this.checked) {
-                //         alert("jelo");
-                //         console.log("Hello world!");
-                //       } else {
-                //         alert("telo");
-                //         console.log("Hello world2!");
-                //       }
-                //     });
-                //   }
-              }
-
-              function updatelist()
-              {
-                alert("check box clicked in update list");
-              } 
-              function productDesc(product_id) {
-              
-              }
-              // Check Selected Check boxes
-              // function producttypeselected(protype_id) 
-              // {
-              //   var checkboxes = document.getElementsByClassName("ischecked");
-              //   for(let i = 0;i < checkboxes.length;i++){
-              //     checkboxes[i].onclick = function(){
-              //       if (checkboxes[i].checked) {
-              //         var xhttp;  
-                      
-              //         xhttp = new XMLHttpRequest();
-              //         xhttp.onreadystatechange = function() {
-              //             if (this.readyState == 4 && this.status == 200) {
-              //             document.getElementById("test").innerHTML = this.responseText;
-              //             }
-              //         };
-              //         xhttp.open("GET", "ShowProducts.php?q=" + protype_id, true);
-              //         xhttp.send();
-              //       }
-                    
-              //     };
-              //   }
-              // }
-              
-              </script>
+      
+      <script src="filterproduct.js"></script>
+      
           </body>
 </html>

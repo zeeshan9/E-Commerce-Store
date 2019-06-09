@@ -79,6 +79,16 @@ class Product {
         return $result;
     }
 
+    public function GetAllRecordsByPrice($values) 
+    {
+        // $sql = "SELECT * FROM product WHERE price in ($values)";
+        $sql = "SELECT * FROM product WHERE price >=$values[0] and price<=$values[1]";
+    
+        $result = $this->pdo->query($sql);
+        
+        return $result;
+    }
+
     /*
      * This function returns single Object of this class
      * Search Criteria: id
