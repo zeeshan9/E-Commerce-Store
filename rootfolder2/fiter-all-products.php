@@ -497,7 +497,7 @@
         //   $(".title").mouseout(function(){
           
         //     $(".title").css("font-size", "10px");
-          
+           
         //   });
         // });
           
