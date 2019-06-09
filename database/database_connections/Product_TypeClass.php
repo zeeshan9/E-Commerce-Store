@@ -16,9 +16,9 @@ class Product_Type {
     }
 
 
-    public function Insert($id,$type_name) {
+    public function Insert($type_name) {
 
-        $sql = $this->pdo->prepare("insert into product_type values('$id','$type_name')");
+        $sql = $this->pdo->prepare("insert into product_type values(null,'$type_name')");
         $sql->execute();
         
     }
