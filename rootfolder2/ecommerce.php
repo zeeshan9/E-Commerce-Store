@@ -137,7 +137,7 @@
       <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <h3>Weekly Deals</h3>
+                <h3 class="title">Flash Sale</h3>
             </div>
             <div class="col-md-10">
                   <hr style="color: black; size: 5px; margin-top: 25px">
@@ -148,7 +148,7 @@
           
                                <!-- Product items -->
             <?php 
-            for ($i=0; $i <= 5; $i++) { 
+              for ($i=0; $i <= 5; $i++) { 
             ?>     
             <div class="col-sm-2 pad">
                   <!-- //onclick="productDesc($id[$i])"" -->
@@ -172,7 +172,7 @@
                       <div class="hp-mod-price textstyle">
                     
                       <div class="hp-mod-price-second-line">
-                        <span >Rs <?php echo $price[$i]; ?> -40%</span> 
+                        <span >Rs <?php echo $price[$i]; ?>-40%</span> 
                       </div>
 
                       </div>     
@@ -195,7 +195,7 @@
               <!--            Next Row                 -->
     <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
-          <h3>Weekly Deals</h3>
+          <h3 class="title">Collections</h3>
           
           <div class="row inner-row">
           <!-- Product items -->
@@ -239,7 +239,6 @@
             ?>
 </form>
                                 
-          
                                           <!-- End of Row -->
           </div>
         </div>
@@ -248,7 +247,7 @@
       <!--            Next Row                 -->
     <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
-          <h3>Weekly Deals</h3>
+          <h3 class="title">Weekly Deals</h3>
           
           <div class="row inner-row">
           <!-- Product items -->
@@ -299,7 +298,7 @@
        <!--            Next Row                 -->
        <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
-          <h3>Weekly Deals</h3>
+          <h3 class="title">Global Collections</h3>
           
           <div class="row inner-row">
           <!-- Product items -->

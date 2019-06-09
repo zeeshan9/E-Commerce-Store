@@ -13,7 +13,8 @@
         <div class="row-2">
             <div class="col-sm-2 row-1">
             <div class="nav bar-header">
-                <img class="navbar-brand" src="../images/add.svg" alt="image logo">
+            <img src="../images/logo.jpg" margin-top="15px" alt="image logo" height="35px">
+                <!-- <img class="navbar-brand" src="../images/add.svg" alt="image logo"> -->
         </div>
          </div>
          <div class="col-sm-9 row-1">
@@ -50,26 +51,41 @@
                       <span><strong>Categories</strong></span>
                       </a>
                       <div class="dropdown-content">
-                        <a href="#">Electronic</a>
-                        <a href="#">Mobile Phone</a>
-                        <a href="#">Laptops</a>
+                        <?php
+                            require_once("../database/database_connections/Product_TypeClass.php");
+                            $product_TypeTabel = new Product_Type();
+                            $result = $product_TypeTabel->GetAllRecords();
+
+                            while($row = $result->fetch())
+                            {
+                                echo "<a href='fiter-all-products.php?id= echo '". $row["id"]. ">" . $row["name"] . "</a>";
+                             } 
+                        ?>
+                    
                       </div>
                     </div>
               </div>
               <div class="inline" >
                   <div class="dropdown">
                       <a class="anchor" style="color: #ec830be8;" id="deals" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
-                      <strong>Today's Deal</strong></a>
+                      <strong>Brand</strong></a>
                       <div class="dropdown-content">
-                        <a href="#">gifts</a>
-                        <a href="#">locket</a>
-                        <a href="#">Laptops</a>
+                      <?php
+                            require_once("../database/database_connections/Product_TypeClass.php");
+                            $product_TypeTabel = new Product_Type();
+                            $result = $product_TypeTabel->GetAllRecordsFromBrand();
+
+                            while($row = $result->fetch())
+                            {
+                                echo "<a href='fiter-all-products.php?id= echo '". $row["id"]. ">" . $row["name"] . "</a>";
+                             } 
+                        ?>
                       </div>
                     </div>
               </div>
               <div class="inline" style="color: slateblue">
-                  <a class="anchor" style="color: #ec830be8;" id="todaydeal" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
-                  <strong>Brand</strong>
+                  <a class="anchor"  href="fiter-all-products.php" style="color: #ec830be8;" id="todaydeal" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+                  <strong>Today's Deal</strong>
                 </a>
               </div>
               
@@ -90,6 +106,9 @@
             </div>
           
            </div> 
+
+
+
 
 
     <!-- <div class="container-fluid">
@@ -154,3 +173,13 @@
 
      </body>
 </html>
+
+
+
+
+
+
+
+
+
+
