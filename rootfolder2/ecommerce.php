@@ -38,30 +38,43 @@
           <div class="col-sm-3" >
           <div class="container-fluid maxheight-div" >
               <div class="row padrow">
-                <div class="col-md-6">
+                <div class="col-md-6 gridimg">  
                 <?php
-                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
+                    echo '<a class="title" 
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=15" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
                 ?>
+                
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 gridimg">
                 <?php
-                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
-                ?>               
+                    echo '<a class="title" 
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=13" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
+                ?>             
                  </div>
               </div>
             </div>
 
             <div class="container-fluid maxheight-div">
               <div class="row padrow">
-                  <div class="col-md-6">
+                  <div class="col-md-6 gridimg">
                   <?php
-                    echo "<img src='../product_images/$img[3]' alt='Product Image' width='100%'>";  
-                   ?>
+                    echo '<a class="title"
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=16" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
+                ?>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 gridimg">
                   <?php
-                                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
-                                ?>
+                    echo '<a class="title" 
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=17" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
+                ?>
                   </div>
                 </div>
               </div>
@@ -131,18 +144,16 @@
             </div>
         </div>
         
-        
         <div class="row inner-row">
           
                                <!-- Product items -->
-        <!-- <form action="" > -->
             <?php 
             for ($i=0; $i <= 5; $i++) { 
             ?>     
             <div class="col-sm-2 pad">
                   <!-- //onclick="productDesc($id[$i])"" -->
                   <div class="center-div">
-                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
+                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="<?php echo $i ?>">
                         <?php
                           echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
                         ?>
@@ -150,11 +161,13 @@
                       <div class="card-jfy-item-desc"> 
                               
                       <div class="card-jfy-title">
-                      <span >
-                      <a class="title" href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" ><span> <?php echo $name[$i]; ?> </span> </a>
-                        
-                        </span>
-                        </div>
+                      <span>
+                      <a class="title" id="<?php echo $id[$i] ?>" onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+                      href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" >
+                      <span class="title"> <?php echo $name[$i]; ?> </span>
+                      </a>
+                      </span>
+                      </div>
                     
                       <div class="hp-mod-price textstyle">
                     
@@ -164,7 +177,7 @@
 
                       </div>     
                       <div class="card-jfy-footer">
-                        <p class="textstyle">rating</p>
+                        <p class="textstyle" >rating</p>
                       </div>
                     </div>
 
@@ -334,32 +347,6 @@
         </div>
       </div>
 
-
-      <script>
-        
-        $(document).ready(function()
-        {
-          $(".title").mouseover(function(){
-           
-          $(".title").css("font-size", "12px");
-          
-          });
-          
-          $(".title").mouseout(function(){
-          
-            $(".title").css("font-size", "10px");
-          
-          });
-        });
-
-
-
-        function productDesc(Prod_title) {
-          echo "abcd ".Prod_title;
-          $(.Prod_title).css("font-size", "12px");
-        }
-        document.getElementById("demo").innerHTML = myFunction(4, 3);
-        </script>
-
+        <script src="ecommerce.js"></script>
     </body>
 </html>

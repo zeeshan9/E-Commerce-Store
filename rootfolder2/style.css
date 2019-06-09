@@ -6,8 +6,8 @@
     height: 1px;
 }
 .register, .register1 {   
-    /* color: #424242; */
-    color: linear-gradient(to bottom left, #003366 0%, #33cccc 100%);
+    color: #ec830be8;
+    /* color: linear-gradient(to bottom left, #003366 0%, #33cccc 100%); */
     /* background: linear-gradient(to bottom left, #13547a 0%, #80d0c7 100%); */
     /* color: linear-gradient(to bottom left, #13547a, #80d0c7 100%); */
 }
@@ -20,18 +20,9 @@ div.inline {
 }
 .anchor{
     color: linear-gradient(to bottom left, #003366 0%, #33cccc 100%);
-    /* color: linear-gradient(to bottom left, #13547a, #80d0c7 100%); */
 }
 .row-2,#outer-nav{
-     /* background:#ff6a00;  */
-     /* background: salmon; */
-     /* background: sandybrown; */
-     /* background: #ff9900 */
-     /* background:#0080ff; */
-     /* background:#6452fa; */
-    /* background-color: #4bb6ce; */
-    /* margin-left: 0%; */
-    /* background: linear-gradient(to bottom left, #003366 0%, #33cccc 100%); */
+
     background: linear-gradient(to bottom left, #13547a 0%, #80d0c7 100%);
 }
 .navbar-brand{
@@ -48,14 +39,14 @@ div.inline {
 }
 .form-control,.btn{
     border-radius: 5px;
+    height: 30px;
 }
 
 #courasal{
     /* height: 20%; */
     max-width: fit-content;
-    max-height:fit-content;
-    /* width: fit-content; */
-    /* background: #424242; */
+    max-height: fit-content;
+
 }
 #cor_img{
     max-width: 100%;
@@ -83,8 +74,6 @@ div.inline {
 
 }
 .inner-row{
-    /* background: cadetblue; */
-    /* padding-left: 5px;  */
     padding: 5px;
 }
 .pad{
@@ -95,12 +84,19 @@ div.inline {
     float: right;
 }
 .center-div{
-    /* padding-left: 3px; */
     padding-top: 10px;
     background:whitesmoke;
-    /* background:; */
     background-attachment: fixed;
+ 
 }
+.J_GridImage :hover{
+    opacity: .4;
+}
+
+.gridimg :hover{
+    opacity: .4;
+}
+
 .small_img{
     height:80%;
     width:80%;
@@ -155,13 +151,11 @@ div.inline {
     background-color: white;
 }
 
-.btn :hover{
+.btn :hover {
     background-color: #4267b2;
 }
 #productimage {
-    /* background: white; */
     height: 143px;
-    /* height: 190px; */
 }
 .card-jfy-title,.textstyle {
     color: #ec830be8;
@@ -172,10 +166,9 @@ div.inline {
 }
 .maxheight-div {
     height:50%;
- }
+m }
  .padrow{
    padding-top: 10%;
  }
- /* .imageheight {
-    height:'145px';
-  } */
+ 
+a { color: #FF0000; }

@@ -196,10 +196,21 @@
                           ?>
                         </div>
                             <div class="card-jfy-item-desc">
-                                    
+                            <!-- onclick="productDesc()" -->
                             <div class="card-jfy-title">
-                            <span class="title" onclick="productDesc()"><?php echo $name[$i]; ?> </span>
-                          </div>
+                            
+                            <span>
+                            <a class="title" id="<?php echo $id[$i] ?>" onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+                              href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" >
+                              <span class="title"> <?php echo $name[$i]; ?> </span>
+                            </a>
+                            </span>
+                            <!-- <span>
+                            <a class="title" href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>">
+                            <span> <php echo $name[$i]; ?> </span> 
+                            </a>
+                            </span> -->
+                            </div>  
                       
                         <div class="hp-mod-price textstyle">
                       
@@ -473,6 +484,26 @@
         </div>
       </div>
       
+      <script>
+        
+        // $(document).ready(function()
+        // {
+        //   $(".title").mouseover(function(){
+           
+        //   $(".title").css("font-size", "12px");
+          
+        //   });
+          
+        //   $(".title").mouseout(function(){
+          
+        //     $(".title").css("font-size", "10px");
+          
+        //   });
+        // });
+          
+
+        </script>
+
       <script src="filterproduct.js"></script>
       
           </body>
