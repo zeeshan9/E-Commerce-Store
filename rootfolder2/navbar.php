@@ -3,6 +3,11 @@
 <head>
     <title>E-Commerce Store</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">    
 
@@ -94,12 +99,12 @@
             </div>
             <div class="col-md-1">
               <div class="col-md-1" >
-                    <a class="register" style="color: #ec830be8;" id="signup" onmouseover="mouseover(this)" onmouseout="mouseout(this)" >
+                    <a class="register" href="Signup-Account.html" style="color: #ec830be8;" id="signup" onmouseover="mouseover(this)" onmouseout="mouseout(this)" >
                         <strong>Signup</strong>
                     </a>
                 </div>
                 <div class="col-md-0" id="register1">
-                    <p><a class="register1" style="color: #ec830be8;" id="login" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+                    <p><a class="register1" style="color: #ec830be8;" id="login" onmouseover="mouseover(this)" onmouseout="mouseout(this)"  data-toggle="modal" data-target="#myModal">
                         <strong>Login</strong>
                 </a></p>
                 </div>
@@ -107,6 +112,44 @@
           
            </div> 
 
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <div  class="input-group1">
+                                <h5 ><strong>Email</strong></h5>
+                              <input id="email2" type="text" class="form-control" name="Email" placeholder="Email">
+                            </div>
+                            <div class="input-group1">
+                                <h5 ><strong>Password</strong></h5>
+                              <input id="password2" type="password" class="form-control" name="password" 
+                              placeholder="Password">
+                              
+                            </div>
+                           
+                        </form>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Login</button>
+                    </div>
+                    
+                </div>
+                </div>
+            
+            </div>
 
 
 
