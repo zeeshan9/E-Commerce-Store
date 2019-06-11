@@ -401,7 +401,7 @@
             <div class="row">
                 <div class="col-md-2">
                   <br>
-                  <h5 style="color: #ff6a00;">Ranking</h5>
+                 <h5 style="color: #ff6a00;"></h5>  <!-- Ranking -->
                   <hr>
                 </div>
                 <div class="col-md-10">
@@ -484,26 +484,6 @@
         </div>
       </div>
       
-      <script>
-        
-        // $(document).ready(function()
-        // {
-        //   $(".title").mouseover(function(){
-           
-        //   $(".title").css("font-size", "12px");
-          
-        //   });
-          
-        //   $(".title").mouseout(function(){
-          
-        //     $(".title").css("font-size", "10px");
-           
-        //   });
-        // });
-          
-
-        </script>
-
       <script src="filterproduct.js"></script>
       
           </body>

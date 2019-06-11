@@ -154,9 +154,11 @@
                   <!-- //onclick="productDesc($id[$i])"" -->
                   <div class="center-div">
                       <div class="card-jfy-image card-jfy-image-background J_GridImage" id="<?php echo $i ?>">
-                        <?php
-                          echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
-                        ?>
+                        <!-- <object data="../product_images/trendingstyle.jpg" type="image/png" height='145px' width='100%'>"> -->
+                            <?php
+                              echo "<img src='../product_images/$img[$i]'  height='145px' alt='Product Image' width='100%'>";  
+                            ?>
+                        <!-- </object> -->
                       </div>
                       <div class="card-jfy-item-desc"> 
                               
@@ -176,9 +178,9 @@
                       </div>
 
                       </div>     
-                      <div class="card-jfy-footer">
+                      <!-- <div class="card-jfy-footer">
                         <p class="textstyle" >rating</p>
-                      </div>
+                      </div> -->
                     </div>
 
               </div>
@@ -208,9 +210,11 @@
               
               <div class="center-div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]'   alt='Product Image' width='100%'>";  
-                    ?>
+                    <!-- echo <object data='../product_images/trendingstyle.jpg' type='image/png' height='145px' width='100%'>onerror='this.src='trendingstyle.jpg'' -->
+                      <?php
+                        echo "<img class='defaultimg' src='../product_images/$img[$i]'  onerror='this.src='trendingstyle.jpg'' alt='Product Image' width='100%'>";  
+                      ?>
+                    <!-- </object> -->
                   </div>
                   <div class="card-jfy-item-desc"> 
                           
@@ -345,7 +349,15 @@
           </div>
         </div>
       </div>
-
+        <script>
+          // document.getElementsByClassName('defaultimg').src = "../product_images/trendingstyle.jpg";
+          // var image = document.getElementsByClassName('defaultimg');
+          // if(image.value == null || image.value == ''){
+            // alert("inside if "+ image.value);
+            // document.getElementsByClassName('defaultimg').value = "../product_images/trendingstyle.jpg";
+            // image.src = "../product_images/trendingstyle.jpg";
+          // }
+        </script>
         <script src="ecommerce.js"></script>
     </body>
 </html>

@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="item_selected.css">
     <link rel="stylesheet" href="../normalized_style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +13,23 @@
 </head>
 <body>
 
+    <?php require_once("navbar.php");?>
+    
     <div class="container-fluid">
-        <!-- Navigation Bar -->
+        <!-- Navigation Bar  user data so to know user is logged in-->
+        
         <?php
-            require_once("../../navbar.php");
+            
+            require_once("../../database/database_connections/ProductClass.php");
+            $prod = new Product();
+
             $id = $_GET["id"];
+            $result = $prod->GetSingleRecord($id);
+
+
+            $prodData = $result->fetch();
+
         ?>
-           
 
         <div class="row">
 
@@ -29,14 +40,13 @@
                     <div class="card img-item-lg">
 
                         <?php
-
-                            require_once("../../database/database_connections/ProductClass.php");
-                            $prodImg = new Product();
-                            $imgName = $prodImg->GetProductPicture($id);
-                            echo $imgName;
-                            //echo "<img src='../../product_images/$imgName' alt='Product Image' width='100%'>";
+                            echo "<img src='../../product_images/".$prodData['picture']."' alt='Product Image' width='100%'>";
                         ?>
+                    
                     </div>
+
+                </div>
+
             </div>
 
             <div class="col-lg-8">
@@ -46,9 +56,10 @@
                     <!-- Related to compnay -->
                     <div class="company-related">
 
-                        <div class="item-name"><h2>Mobile</h2></div>
+                    <?php
+                        echo "<div class='item-name'><h2>".$prodData['name']."</h2></div>";
+                    ?>
 
-                        <div class="item-company-name"><h6>Google LLC</h6></div>
 
                     </div>
 
@@ -57,7 +68,9 @@
 
                         <div class="item-price">
                             <label for="">Price:</label>
-                            <label>350.0 $</label>
+                            <?php
+                                echo "<label>".$prodData['price']." Rs</label>";
+                            ?>
                         </div>
 
 
@@ -66,21 +79,11 @@
                     <!-- Realted to item description -->
                     <div class="des-item">
                         <h4>Description:</h4>
-                        
-                        <p>
 
-                            Product works and looks like new. Backed by the 90-day Amazon Renewed Guarantee. <br>
-                            
-                            This Amazon Renewed product is professionally inspected and tested by an Amazon qualified supplier. Box and accessories may be generic. Learn more
-                            
-                            <ul>
-                                <li>12.2MP Camera with f/1.8, 27mm, 1/2.6" Sensor Size + 8MP Front Camera with f/2.4, 27mm, 1/3.2" Sensor Size</li>
-                                <li>5.0-inch AMOLED Capacitive Touchscreen, 1080 x 1920 pixels with Corning Gorilla Glass 5 </li>
-                                <li>Android OS </li>
-                                <li>Internal Memory: 64GB, 4GB RAM </li>
-                                <li>Non-Removable Lithium Ion 2700 mAh Battery, Dimensions: 5.74 x 2.74 x 0.31 inches, Weight: 5.04 oz </li>
-                            </ul>    
-                        </p>
+                        <?php
+                            echo "<p>".$prodData['product_des']."</p>";
+                        ?>
+                        
                     </div>
 
 
@@ -100,29 +103,53 @@
 
                         <div class="delivery-location">
 
-                            <button class="button" type="button">
-                                <div>
-                                    <a href="">Location</a> 
-                                    <img src="../../images/locatioIcon.svg" alt="Loc Icon" width="30px">
-                                </div>
-                            </button>
-
-                            <p>Selected Location</p>
-
+                            <input type="text" placeholder="Enter location">
+                            <br><br> 
                             
                         </div>
 
                         <div class="item-add-cart">
                             
-                            <div><h4>In Stock</h4></div>
+                            <div><h4 id="noInStock" value=<?php echo $prodData['stock']; ?> >In Stock: <?php echo $prodData['stock']; ?></h4></div>
 
                             <div class="buy-quantity">
                                 <label for="">Quantity:</label>
 
-                                <button class="button"><img src="../../images/add.svg" alt="" width="30px"></button>
-                                <label id="itemQuantity" for="">1</label>
-                                <button class="button"><img src="../../images/substract.svg" alt="" width="30px"></button>
+                                <button class="button" id="incNoItem" onclick="incItem()"><img src="../../images/add.svg" alt="" width="30px"></button>
+                                <label id="itemQuantity" for="" value="1">1</label>
+                                <button class="button" id="decNoItem" onclick="decItem()"><img src="../../images/substract.svg" alt="" width="30px"></button>
 
+                                <script>
+
+                                    function incItem(){
+                                        var toBuy = document.getElementById("itemQuantity").getAttribute("value"); 
+                                        var inStock = document.getElementById("noInStock").getAttribute("value");
+
+                                        if(parseInt(toBuy) < parseInt(inStock)){
+                                            toBuy = parseInt(toBuy) + 1;
+                                            document.getElementById("itemQuantity").setAttribute("value",toBuy);
+                                            document.getElementById("itemQuantity").innerHTML = toBuy;
+                                        }
+                                    }
+
+                                    function decItem(){
+                                        var toBuy = document.getElementById("itemQuantity").getAttribute("value"); 
+                                        var inStock = document.getElementById("noInStock").getAttribute("value");
+
+                                        if(parseInt(toBuy) == 0){
+
+                                        }
+                                        else if(parseInt(toBuy) > 0){
+                                            toBuy = parseInt(toBuy) - 1;
+                                            document.getElementById("itemQuantity").setAttribute("value",toBuy);
+                                            document.getElementById("itemQuantity").innerHTML = toBuy;
+                                        }
+                                    }
+                                
+                                    
+                                
+                                </script>
+                                
                             </div>
 
                             <div class="shopping">
@@ -134,19 +161,6 @@
                                             <img src="../../images/shopping-cart.svg" alt="" width="40px">
                                         </div>
                                     </button>
-                                </div>
-
-                                <div class="buy-now">
-                                    <button class="button" type="button">
-                                        <div>
-                                            <a class="removelinkdefault" href="">Add To Cart</a>
-                                            <img src="../../images/buy_now.svg" alt="" width="40px">
-                                        </div>
-                                    </button>
-                                </div>
-
-                                <div class="item-supplier">
-                                    <label for="">Sold By <a href="">----</a></label>
                                 </div>
 
                             </div>
@@ -163,32 +177,7 @@
 
         <div class="row">
 
-            <div class="col-lg-4">
-
-                <div class="item-similar">
-
-                    <div class="card">
-                        <img class="card-img-top" id="simItem-1" src="../../images/samsungGalaxyXCurve.jpg" alt="Samsung Galaxy X Curve 2019" width="100%">
-                        <br>
-                        <label for="">Samsung Galaxy X Curve 2019</label>
-
-                    </div>
-
-                    <div class="card">
-                        <img class="card-img-top" id="simItem-1" src="../../images/samsungGalaxyA8Star.jpg" alt="Samsung Galaxy A8 Star" width="100%">
-                        <br>
-                        <label for="simItem-1">Samsung Galaxy A8 Star</label>
-                    </div>
-
-                    <div class="card">
-                        <img class="card-img-top" id="simItem-1" src="../../images/iPhoneX.jpg" alt="iPhone X" width="100%">
-                        <br>
-                        <label for="simItem-1">iPhone X</label>
-                    </div>
-
-                </div>
-
-            </div>
+            <div class="col-lg-4"></div>
 
             <div class="col-lg-8">
 
@@ -198,72 +187,18 @@
 
                         <h2>Manufacturer Description:</h2>
 
-                        <p>
-                            The best smartphone camera in the world.
-
-                            <ul>
-                                <li>Capture your best photos ever with Pixel.</li>
-                                <li>Never delete a shot with free unlimited storage for all your photos and videos in original quality.</li>
-                                <li>Take next-level photos with HDR+ integrated into Instagram, WhatsApp and Snapchat.</li>
-                                <li>Incredible detail even in low light with HDR+.</li>
-                                <li>Add interactive characters and emojis to live scenes with AR.</li>
-                                <li>Image stabilization keeps videos steady.</li>
-                                <li>Blurs background for DSLR-quality portraits.</li>
-                                <li>Google Photos helps you find, save, organize and share.</li>
-                            </ul>
-                        
-                        </p>
-
-                        <h3>Key Features:</h3>
-
-                        <p>
-                            <h5>Search what you see.</h5>
-
-                            Learn more about landmarks or look up books, movies, albums and artwork using Google Lens.
-
-                        </p>
-
-                        <p>
-
-                            Your own personal Google, built in.
-
-                            Request a ride, reserve a table and buy a ticket using just your voice.
-
-                            <h5>Squeeze for help.</h5>
-
-                            With a squeeze, you can launch your Google Assistant for real-time help
-
-                        </p>
-
-                        <p>
-            
-                            Big entertainment, wherever you go.
-
-                            High‑definition stereo speakers and High‑resolution displays
-
-                            <h5>Name that tune.</h5>
-
-                            Curious about that song playing in your favorite coffee shop? Pixel automatically displays song info so you know what's playing.
-
-                        </p>
+                        <?php
+                            echo "<p>".$prodData['manufacturer_des']."</p>";
+                        ?>
 
                     </div>
 
                 </div>
 
-                <div class="item-rating-review">
-
-                    <div class="item-rating"></div>
-
-                </div>
 
             </div>
             
         </div>
-
-        <footer>
-
-        </footer>
 
     </div>
     
