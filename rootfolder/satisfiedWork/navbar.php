@@ -18,24 +18,26 @@
         <div class="row-2">
             <div class="col-sm-2 row-1">
             <div class="nav bar-header">
-            <img src="../images/logo.jpg" margin-top="15px" alt="image logo" height="35px">
+            <img src="../../images/logo.jpg" margin-top="15px" alt="image logo" height="35px">
                 <!-- <img class="navbar-brand" src="../images/add.svg" alt="image logo"> -->
         </div>
          </div>
          <div class="col-sm-9 row-1">
-        <form class="navbar-form navbar-left" action="/action_page.php">
+        <!-- <form class="navbar-form navbar-left" > -->
+        <div class="navbar-form navbar-left" >
         <div class="input-group">
-          <input type="text" class="form-control" id="inputsearch" placeholder="Search" name="search">
+          <input type="text" class="form-control" id="inputsearch" placeholder="Search" name="search" >
           <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
+            <button class="btn btn-default" onclick="itemSearch()">
+              <i class="glyphicon glyphicon-search" ></i>
             </button>
             </div>
           </div>
-        </form>
+</div>
+        <!-- </form> -->
         </div>
 
-            <div class="col-sm1 row-1">
+            <div class="col-sm-1 row-1">
               <img class="" src="../images/orangecart.png" alt="cart img" style="height: 50px; width: 50px;"> 
             </div>
       </div>
@@ -63,7 +65,7 @@
 
                             while($row = $result->fetch())
                             {
-                                echo "<a href='fiter-all-products.php?id= echo '". $row["id"]. ">" . $row["name"] . "</a>";
+                                echo "<a href='fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
                              } 
                         ?>
                     
@@ -82,7 +84,7 @@
 
                             while($row = $result->fetch())
                             {
-                                echo "<a href='fiter-all-products.php?id= echo '". $row["id"]. ">" . $row["name"] . "</a>";
+                                echo "<a href='fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
                              } 
                         ?>
                       </div>
@@ -151,8 +153,18 @@
             
             </div>
 
+            <!-- <script src="ShowSearchProduct.js"></script> -->
+            <script>
+                  function itemSearch() 
+                    {
+                   // var result = document.getElementById("inputsearch").value();
+                   var result = $("#inputsearch").val();
+                        alert("search "+ result);
+                        
+                        window.location.href ="../rootfolder/satisfiedWork/itemNameCheck.php?name="+result;
 
-
+                    }
+            </script>
 
     <!-- <div class="container-fluid">
 

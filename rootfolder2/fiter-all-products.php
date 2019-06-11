@@ -171,7 +171,7 @@
                     for ($bi=0; $bi < $b_index; ++$bi) {
                 ?>
                     <div class="productlist">    
-                      <input type="checkbox" name="checkedproducts"  value="<?php echo $protypeid[$bi]; ?>"
+                      <input id="checkb" type="checkbox" name="checkedproducts"  value="<?php echo $protypeid[$bi]; ?>"
                       style="margin: 7px" onclick="producttypeselected(this)">
                       <?php echo $bname[$bi]; ?>
                     </div>
@@ -264,7 +264,7 @@
                   </div>  
 
                                  <!-- Product item 2 -->
-            <div class="col-md-10" id="parentDiv">
+            <div class="col-md-10" id="parentDiv2">
                   <?php 
                   for ($i=6; $i <= 11; $i++) { 
                   ?>

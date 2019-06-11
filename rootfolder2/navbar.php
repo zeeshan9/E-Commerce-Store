@@ -48,7 +48,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
             <div class="inline" style="color: slateblue">
-                  <a class="anchor" style="color: #ec830be8;" id="home" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+                  <a class="anchor" href="ecommerce.php" style="color: #ec830be8;" id="home" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
                   <strong>Home</strong>
                 </a>
               </div>
@@ -153,77 +153,16 @@
             
             </div>
 
-            <!-- <script src="ShowSearchProduct.js"></script> -->
             <script>
                   function itemSearch() 
                     {
-                   // var result = document.getElementById("inputsearch").value();
-                   var result = $("#inputsearch").val();
-                        alert("search "+ result);
-                        window.location.href ="../rootfolder/satisfiedWork/item_selected.php?name="+result;
+                     var result = $("#inputsearch").val();
+                     window.location.href ="../rootfolder/satisfiedWork/itemNameCheck.php?name="+result;
+                    //  window.location.href ="../rootfolder/satisfiedWork/item_selected.php?name="+result;
 
                     }
             </script>
 
-    <!-- <div class="container-fluid">
-
-         
-        <header>
-            <div class="row">
-                <div class="col-sm-2">
-                    <img src="images/logo.png" alt="logo" height="75px">
-                </div>
-    
-                <div class="col-sm-5">
-                    <form class="navbar-form navbar-left" style="padding: 20px; padding-right: 2px;">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </form>
-                </div>
-
-                <div class="col-sm-3">
-                </div>
-    
-                <div class="col-sm-2">
-                    <div style="padding: 20px; padding-right: 2px;">
-                    <a href="" id="signin">Sign In</a>
-                    <a href="" id="signin">Logout</a>
-                    
-                    </div>  
-                </div>
-               
-            </div>
-        </header>
-    
-        <div style="background-color: white; width: 100%;">
-    
-            <div class="row">
-    
-                <div class="col-lg-1"></div>
-    
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
-                    <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                    </ul>
-                </div> 
-    
-                <div><button type="button" class="btn btn-default">Gift Cards</button></div>
-    
-                <div><button type="button" class="btn btn-default">Today's Deal</button></div>
-    
-                <div><button type="button" class="btn btn-default">Help and Community</button></div>
-    
-                <div><button type="button" class="btn btn-default">Tools</button></div>
-    
-            </div>
-        </div>
-    
-     </div> -->
 
      </body>
 </html>

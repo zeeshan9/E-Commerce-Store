@@ -14,7 +14,7 @@
 <body>
     <div class="container-fluid">
         <!--Nav Bar  -->
-    <?php require_once("navbar.php"); ?>
+    
             
         <form action="../../database/controller/addNewProduct.php" method="POST" enctype="multipart/form-data">
 
