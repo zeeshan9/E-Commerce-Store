@@ -39,7 +39,7 @@
                 $.get("../database/database_connections/ajaxGetProducts.php", {data:result}, function(data){
                    
                   var jsonConverted = JSON.parse(data);
-
+                  if (jsonConverted!=null || jsonConverted!=""){
                   $("#parentDiv").html("");
                   var counter=1;
                   $.each(jsonConverted, function(index, value){
@@ -54,6 +54,7 @@
                        }
                        counter++;
                     });
+                  }
                 });
                 
                 

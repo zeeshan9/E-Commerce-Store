@@ -40,8 +40,7 @@
               <div class="row padrow">
                 <div class="col-md-6 gridimg">  
                 <?php
-                    echo '<a class="title" 
-                    href="../rootfolder/satisfiedWork/item_selected.php?id=15" >';
+                    echo '<a class="title" href="../rootfolder/satisfiedWork/item_selected.php?id=15" >';
                     echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
                     echo '</a>'; 
                 ?>
@@ -151,14 +150,11 @@
               for ($i=0; $i <= 5; $i++) { 
             ?>     
             <div class="col-sm-2 pad">
-                  <!-- //onclick="productDesc($id[$i])"" -->
                   <div class="center-div">
                       <div class="card-jfy-image card-jfy-image-background J_GridImage" id="<?php echo $i ?>">
-                        <!-- <object data="../product_images/trendingstyle.jpg" type="image/png" height='145px' width='100%'>"> -->
                             <?php
                               echo "<img src='../product_images/$img[$i]'  height='145px' alt='Product Image' width='100%'>";  
                             ?>
-                        <!-- </object> -->
                       </div>
                       <div class="card-jfy-item-desc"> 
                               
@@ -177,10 +173,7 @@
                         <span >Rs <?php echo $price[$i]; ?>-40%</span> 
                       </div>
 
-                      </div>     
-                      <!-- <div class="card-jfy-footer">
-                        <p class="textstyle" >rating</p>
-                      </div> -->
+                      </div>
                     </div>
 
               </div>
@@ -203,41 +196,38 @@
           <!-- Product items -->
           <form action="" >
         <?php 
-        for ($i=7; $i <= 12; $i++) { 
+        for ($i=2; $i <=7; $i++) { 
           ?>
         
-        <div class="col-sm-2 pad" >
-              
-              <div class="center-div">
-                  <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <!-- echo <object data='../product_images/trendingstyle.jpg' type='image/png' height='145px' width='100%'>onerror='this.src='trendingstyle.jpg'' -->
-                      <?php
-                        echo "<img class='defaultimg' src='../product_images/$img[$i]'  onerror='this.src='trendingstyle.jpg'' alt='Product Image' width='100%'>";  
-                      ?>
-                    <!-- </object> -->
-                  </div>
-                  <div class="card-jfy-item-desc"> 
-                          
-                  <div class="card-jfy-title">
-                  <span class="title" onclick="productDesc()">
-                    <?php echo $prod_desc[$i]; ?>
-                    </span>
+        <div class="col-sm-2 pad">
+                  <div class="center-div">
+                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="<?php echo $i ?>">
+                            <?php
+                              echo "<img src='../product_images/$img[$i]'  height='145px' alt='Product Image' width='100%'>";  
+                            ?>
+                      </div>
+                      <div class="card-jfy-item-desc"> 
+                              
+                      <div class="card-jfy-title">
+                      <span>
+                      <a class="title" id="<?php echo $id[$i].$id[$i] ?>" onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+                      href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" >
+                      <span class="title"> <?php echo $name[$i]; ?> </span>
+                      </a>
+                      </span>
+                      </div>
+                    
+                      <div class="hp-mod-price textstyle">
+                    
+                      <div class="hp-mod-price-second-line">
+                        <span >Rs <?php echo $price[$i]; ?>-40%</span> 
+                      </div>
+
+                      </div>
                     </div>
-                 
-                  <div class="hp-mod-price textstyle">
-                
-                  <div class="hp-mod-price-second-line">
-                     <span >Rs <?php echo $price[$i]; ?> -40%</span> 
-                  </div>
 
-                  </div>     
-                  <div class="card-jfy-footer">
-                     <p class="textstyle">rating</p>
-                  </div>
-                </div>
-
-          </div>
-      </div>
+              </div>
+            </div>
             <?php
             }
             ?>
@@ -257,43 +247,42 @@
           <!-- Product items -->
           <form action="" >
         <?php 
-        for ($i=13; $i <= 18; $i++) { 
+        for ($i=1; $i <= 6; $i++) { 
           ?>
         
         <div class="col-sm-2 pad">
-              
-              <div class="center-div">
-                  <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
-                    ?>
-                  </div>
-                  <div class="card-jfy-item-desc"> 
-                          
-                  <div class="card-jfy-title">
-                  <span class="title" onclick="productDesc()">
-                    <?php echo $prod_desc[$i]; ?>
-                    </span>
+                  <div class="center-div">
+                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="<?php echo $i ?>">
+                            <?php
+                              echo "<img src='../product_images/$img[$i]'  height='145px' alt='Product Image' width='100%'>";  
+                            ?>
+                      </div>
+                      <div class="card-jfy-item-desc"> 
+                              
+                      <div class="card-jfy-title">
+                      <span>
+                      <a class="title" id="<?php echo $id[$i].$id[$i].$id[$i] ?>" onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+                      href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" >
+                      <span class="title"> <?php echo $name[$i]; ?> </span>
+                      </a>
+                      </span>
+                      </div>
+                    
+                      <div class="hp-mod-price textstyle">
+                    
+                      <div class="hp-mod-price-second-line">
+                        <span >Rs <?php echo $price[$i]; ?>-40%</span> 
+                      </div>
+
+                      </div>
                     </div>
-                 
-                  <div class="hp-mod-price textstyle">
-                
-                  <div class="hp-mod-price-second-line">
-                     <span >Rs <?php echo $price[$i]; ?> -40%</span> 
-                  </div>
 
-                  </div>     
-                  <div class="card-jfy-footer">
-                     <p class="textstyle">rating</p>
-                  </div>
-                </div>
-
-          </div>
-      </div>
+              </div>
+            </div>
             <?php
             }
             ?>
-</form>
+          </form>
                                           <!-- End of Row -->
           </div>
         </div>
@@ -308,43 +297,42 @@
           <!-- Product items -->
           <form action="" >
         <?php 
-        for ($i=19; $i <= 24; $i++) { 
+        for ($i=0; $i <= 5; $i++) { 
           ?>
         
         <div class="col-sm-2 pad">
-              
-              <div class="center-div">
-                  <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
-                    ?>
-                  </div>
-                  <div class="card-jfy-item-desc"> 
-                          
-                  <div class="card-jfy-title">
-                  <span class="title" onclick="productDesc()">
-                    <?php echo $prod_desc[$i]; ?>
-                    </span>
+                  <div class="center-div">
+                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="<?php echo $i ?>">
+                            <?php
+                              echo "<img src='../product_images/$img[$i]'  height='145px' alt='Product Image' width='100%'>";  
+                            ?>
+                      </div>
+                      <div class="card-jfy-item-desc"> 
+                              
+                      <div class="card-jfy-title">
+                      <span>
+                      <a class="title" id="<?php echo $id[$i].$id[$i].$id[$i].$id[$i] ?>" onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+                      href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" >
+                      <span class="title"> <?php echo $name[$i]; ?> </span>
+                      </a>
+                      </span>
+                      </div>
+                    
+                      <div class="hp-mod-price textstyle">
+                    
+                      <div class="hp-mod-price-second-line">
+                        <span >Rs <?php echo $price[$i]; ?>-40%</span> 
+                      </div>
+
+                      </div>
                     </div>
-                 
-                  <div class="hp-mod-price textstyle">
-                
-                  <div class="hp-mod-price-second-line">
-                     <span >Rs <?php echo $price[$i]; ?> -40%</span> 
-                  </div>
 
-                  </div>     
-                  <div class="card-jfy-footer">
-                     <p class="textstyle">rating</p>
-                  </div>
-                </div>
-
-          </div>
-      </div>
+              </div>
+            </div>
             <?php
             }
             ?>
-</form>
+          </form>
                                           <!-- End of Row -->
           </div>
         </div>

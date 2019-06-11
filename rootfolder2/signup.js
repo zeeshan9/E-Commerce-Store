@@ -5,6 +5,7 @@ function validateForm() {
 
     if(emailValidation && passValidation)
     {
+        return true;
     }
     else
     {
@@ -18,6 +19,7 @@ function validatePassword(){
 
     if(pass==match)
     {
+        return true;
     }
     else
     { 
@@ -29,10 +31,11 @@ function validatePassword(){
 
 function validateEmail(){
     var email = document.forms["signupForm"]["userEmail"].value;
-    var emailPattren = /(\w|\d)+@(\w)+(\.com)/i;
+    var emailPattren = /(\w|\d)+@(\w)+(\.com)/;
 
     if(emailPattren.test(email))
     {
+        return true;
     }
     else
     {
