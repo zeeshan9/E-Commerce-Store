@@ -173,15 +173,15 @@
                         }
 
                         $(document).ready(function() {
-                          $("#loginButton").click(function() {
+                            $("#loginButton").click(function() {
 
-                              var userMail = $("#brandName").val();
-                              var userPass = $("#brandName").val();
-                              document.cookie = "email=" + userMail;
+                                var userMail = document.forms["loginModal"]["Email"].value;
+                                var userPass = document.forms["loginModal"]["password"].value;
+                                document.cookie = "email=" + userMail;
 
-                              $("#userImage").load("../../database/controller/validateUser.php", {email: userMail, password: userPass});
+                                $("#userImage").load("../database/controller/validateUser.php", {email: userMail, password: userPass, loc: "rootfolder2"});
             
-                          });
+                            });
 
                         });
                     </script>

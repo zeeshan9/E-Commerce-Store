@@ -103,14 +103,14 @@
 
                         <div class="delivery-location">
 
-                            <input type="text" placeholder="Enter location">
+                            <form name="locationForm"><input required name="inputLoc" type="text" placeholder="Enter location"></form>
                             <br><br> 
                             
                         </div>
 
                         <div class="item-add-cart">
                             
-                            <div><h4 id="noInStock" value=<?php echo $prodData['stock']; ?> >In Stock: <?php echo $prodData['stock']; ?></h4></div>
+                            <div id="stockDiv"><h4 id="noInStock" value=<?php echo $prodData['stock']; ?> >In Stock: <?php echo $prodData['stock']; ?></h4></div>
 
                             <div class="buy-quantity">
                                 <label for="">Quantity:</label>
@@ -154,14 +154,29 @@
 
                             <div class="shopping">
 
-                                <div class="add-cart">
-                                    <button class="button" type="button">
+                                <div id="checkOutDiv" class="add-cart">
+                                    <button id="checkOutButton" class="button" type="button" value=<?php echo $id ?>>
                                         <div>
-                                            <a href="">Add To Cart</a>
+                                            <a style="color: orange;">Check Out</a>
                                             <img src="../../images/shopping-cart.svg" alt="" width="40px">
                                         </div>
                                     </button>
                                 </div>
+
+                                <script>
+                                     $(document).ready(function() {
+                                        $("#checkOutButton").click(function() {
+
+                                            var location = document.forms["locationForm"]["inputLoc"].value;
+                                            var toBuy = document.getElementById("itemQuantity").getAttribute("value"); 
+                                            var itemId = document.getElementById("checkOutButton").getAttribute("value"); 
+
+                                            window.location = 'itemCheckOut.php?loc=' + location + "&numBuy="+toBuy+"&id="+itemId;
+                            
+                                        });
+
+                                    });
+                                </script>
 
                             </div>
 
