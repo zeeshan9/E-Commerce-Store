@@ -43,6 +43,14 @@ class Product_Type {
         return $result;
     }
 
+    public function GetAllRecordsFromBrand() {
+        $sql = "select * from brand";
+        
+        $result = $this->pdo->query($sql);
+        
+        return $result;
+    }
+
     
 }
 

@@ -196,10 +196,21 @@
                           ?>
                         </div>
                             <div class="card-jfy-item-desc">
-                                    
+                            <!-- onclick="productDesc()" -->
                             <div class="card-jfy-title">
-                            <span class="title" onclick="productDesc()"><?php echo $name[$i]; ?> </span>
-                          </div>
+                            
+                            <span>
+                            <a class="title" id="<?php echo $id[$i] ?>" onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+                              href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" >
+                              <span class="title"> <?php echo $name[$i]; ?> </span>
+                            </a>
+                            </span>
+                            <!-- <span>
+                            <a class="title" href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>">
+                            <span> <php echo $name[$i]; ?> </span> 
+                            </a>
+                            </span> -->
+                            </div>  
                       
                         <div class="hp-mod-price textstyle">
                       
@@ -390,7 +401,7 @@
             <div class="row">
                 <div class="col-md-2">
                   <br>
-                  <h5 style="color: #ff6a00;">Ranking</h5>
+                 <h5 style="color: #ff6a00;"></h5>  <!-- Ranking -->
                   <hr>
                 </div>
                 <div class="col-md-10">

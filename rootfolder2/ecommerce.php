@@ -38,30 +38,43 @@
           <div class="col-sm-3" >
           <div class="container-fluid maxheight-div" >
               <div class="row padrow">
-                <div class="col-md-6">
+                <div class="col-md-6 gridimg">  
                 <?php
-                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
+                    echo '<a class="title" 
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=15" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
                 ?>
+                
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 gridimg">
                 <?php
-                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
-                ?>               
+                    echo '<a class="title" 
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=13" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
+                ?>             
                  </div>
               </div>
             </div>
 
             <div class="container-fluid maxheight-div">
               <div class="row padrow">
-                  <div class="col-md-6">
+                  <div class="col-md-6 gridimg">
                   <?php
-                    echo "<img src='../product_images/$img[3]' alt='Product Image' width='100%'>";  
-                   ?>
+                    echo '<a class="title"
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=16" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
+                ?>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 gridimg">
                   <?php
-                                    echo "<img src='../product_images/$img[1]' alt='Product Image' width='100%'>";  
-                                ?>
+                    echo '<a class="title" 
+                    href="../rootfolder/satisfiedWork/item_selected.php?id=17" >';
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo '</a>'; 
+                ?>
                   </div>
                 </div>
               </div>
@@ -124,48 +137,50 @@
       <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <h3>Weekly Deals</h3>
+                <h3 class="title">Flash Sale</h3>
             </div>
             <div class="col-md-10">
                   <hr style="color: black; size: 5px; margin-top: 25px">
             </div>
         </div>
         
-        
         <div class="row inner-row">
           
                                <!-- Product items -->
-        <!-- <form action="" > -->
             <?php 
-            for ($i=0; $i <= 5; $i++) { 
+              for ($i=0; $i <= 5; $i++) { 
             ?>     
             <div class="col-sm-2 pad">
                   <!-- //onclick="productDesc($id[$i])"" -->
                   <div class="center-div">
-                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                        <?php
-                          echo "<img src='../product_images/$img[$i]' height='145px' alt='Product Image' width='100%'>";  
-                        ?>
+                      <div class="card-jfy-image card-jfy-image-background J_GridImage" id="<?php echo $i ?>">
+                        <!-- <object data="../product_images/trendingstyle.jpg" type="image/png" height='145px' width='100%'>"> -->
+                            <?php
+                              echo "<img src='../product_images/$img[$i]'  height='145px' alt='Product Image' width='100%'>";  
+                            ?>
+                        <!-- </object> -->
                       </div>
                       <div class="card-jfy-item-desc"> 
                               
                       <div class="card-jfy-title">
-                      <span >
-                      <a class="title" href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" ><span> <?php echo $name[$i]; ?> </span> </a>
-                        
-                        </span>
-                        </div>
+                      <span>
+                      <a class="title" id="<?php echo $id[$i] ?>" onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+                      href="../rootfolder/satisfiedWork/item_selected.php?id=<?php echo $id[$i] ?>" >
+                      <span class="title"> <?php echo $name[$i]; ?> </span>
+                      </a>
+                      </span>
+                      </div>
                     
                       <div class="hp-mod-price textstyle">
                     
                       <div class="hp-mod-price-second-line">
-                        <span >Rs <?php echo $price[$i]; ?> -40%</span> 
+                        <span >Rs <?php echo $price[$i]; ?>-40%</span> 
                       </div>
 
                       </div>     
-                      <div class="card-jfy-footer">
-                        <p class="textstyle">rating</p>
-                      </div>
+                      <!-- <div class="card-jfy-footer">
+                        <p class="textstyle" >rating</p>
+                      </div> -->
                     </div>
 
               </div>
@@ -182,7 +197,7 @@
               <!--            Next Row                 -->
     <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
-          <h3>Weekly Deals</h3>
+          <h3 class="title">Collections</h3>
           
           <div class="row inner-row">
           <!-- Product items -->
@@ -195,9 +210,11 @@
               
               <div class="center-div">
                   <div class="card-jfy-image card-jfy-image-background J_GridImage" id="productimage">
-                    <?php
-                      echo "<img src='../product_images/$img[$i]'   alt='Product Image' width='100%'>";  
-                    ?>
+                    <!-- echo <object data='../product_images/trendingstyle.jpg' type='image/png' height='145px' width='100%'>onerror='this.src='trendingstyle.jpg'' -->
+                      <?php
+                        echo "<img class='defaultimg' src='../product_images/$img[$i]'  onerror='this.src='trendingstyle.jpg'' alt='Product Image' width='100%'>";  
+                      ?>
+                    <!-- </object> -->
                   </div>
                   <div class="card-jfy-item-desc"> 
                           
@@ -226,7 +243,6 @@
             ?>
 </form>
                                 
-          
                                           <!-- End of Row -->
           </div>
         </div>
@@ -235,7 +251,7 @@
       <!--            Next Row                 -->
     <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
-          <h3>Weekly Deals</h3>
+          <h3 class="title">Weekly Deals</h3>
           
           <div class="row inner-row">
           <!-- Product items -->
@@ -286,7 +302,7 @@
        <!--            Next Row                 -->
        <div class="container-fluid product-row-boundary" style="margin:2%">
         <div class="container-fluid">
-          <h3>Weekly Deals</h3>
+          <h3 class="title">Global Collections</h3>
           
           <div class="row inner-row">
           <!-- Product items -->
@@ -333,33 +349,15 @@
           </div>
         </div>
       </div>
-
-
-      <script>
-        
-        $(document).ready(function()
-        {
-          $(".title").mouseover(function(){
-           
-          $(".title").css("font-size", "12px");
-          
-          });
-          
-          $(".title").mouseout(function(){
-          
-            $(".title").css("font-size", "10px");
-          
-          });
-        });
-
-
-
-        function productDesc(Prod_title) {
-          echo "abcd ".Prod_title;
-          $(.Prod_title).css("font-size", "12px");
-        }
-        document.getElementById("demo").innerHTML = myFunction(4, 3);
+        <script>
+          // document.getElementsByClassName('defaultimg').src = "../product_images/trendingstyle.jpg";
+          // var image = document.getElementsByClassName('defaultimg');
+          // if(image.value == null || image.value == ''){
+            // alert("inside if "+ image.value);
+            // document.getElementsByClassName('defaultimg').value = "../product_images/trendingstyle.jpg";
+            // image.src = "../product_images/trendingstyle.jpg";
+          // }
         </script>
-
+        <script src="ecommerce.js"></script>
     </body>
 </html>

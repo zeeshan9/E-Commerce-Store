@@ -13,13 +13,13 @@
         $productDes=$_POST["productDes"];
         $manDes=$_POST["manufacturerDes"];
         $picture=basename($_FILES["picture"]["name"]);
-        uploadImage();
+        
+        if(uploadImage() == 1){
 
-        require_once("../database_connections/ProductClass.php");
-        $productTabel = new Product();
-        echo $id;
-        $productTabel->InsertNewProduct($id, $name, $price, $stock, $picture, $productDes, $manDes, $type,
-         $brand, $warrenty);
+            require_once("../database_connections/ProductClass.php");
+            $productTabel = new Product();
+            $productTabel->InsertNewProduct($id, $name, $price, $stock, $picture, $productDes, $manDes, $type, $brand, $warrenty);
+        }
 
     }
 
@@ -69,6 +69,8 @@
                 echo "Sorry, there was an error uploading your file.";
             }
         }
+
+        return $uploadOk;
 
     }
 

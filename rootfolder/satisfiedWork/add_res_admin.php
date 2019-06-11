@@ -159,7 +159,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Manufacturer Desciption</span>
                             </div>
-                            <textarea required maxlength="100" minlength="50" name="manufacturerDes" class="form-control" aria-label="With textarea"></textarea>
+                            <textarea required maxlength="1000" minlength="50" name="manufacturerDes" class="form-control" aria-label="With textarea"></textarea>
                         </div>
 
                     </div>
