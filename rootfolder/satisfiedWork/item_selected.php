@@ -13,10 +13,10 @@
 </head>
 <body>
 
-    <?php require_once("navbar.php"); ?>
+    <?php require_once("navbar.php");?>
     
     <div class="container-fluid">
-        <!-- Navigation Bar -->
+        <!-- Navigation Bar  user data so to know user is logged in-->
         
         <?php
             

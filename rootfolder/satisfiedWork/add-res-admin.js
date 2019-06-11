@@ -32,19 +32,23 @@ function validateForm(){
 
     if(priceValidation && stockValidation)
     {
+        return true;
     }
     else
     {
+        alert("adsfasdljda");
         return false;
     }
 }
 
 function validateNumericValue(elementName,elementId){
     var dataEntered = document.forms["newProductAddition"][elementName].value;
-    var numericPattern = /"(\d)+"/i;
+    document.forms["newProductAddition"][elementName].value = dataEntered;
+    var numericPattern = /(\d)+/i;
 
     if(numericPattern.test(dataEntered))
     {
+        return true
     }
     else
     { 

@@ -36,6 +36,13 @@ class User {
         
         return $result;
     }
+
+    public function GetUser($userEmail,$password) {
+        $sql = "select id,name,password from user where email='$userEmail' and password='$password'";
+        $result = $this->pdo->query($sql);
+        
+        return $result;
+    }
 }
 
 ?>

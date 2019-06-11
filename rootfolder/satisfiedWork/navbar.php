@@ -37,7 +37,8 @@
         <!-- </form> -->
         </div>
 
-            <div class="col-sm-1 row-1">
+
+            <div id="userImage" class="col-sm-1 row-1">
               <img class="" src="../../images/orangecart.png" alt="cart img" style="height: 50px; width: 50px;"> 
             </div>
       </div>
@@ -72,7 +73,7 @@
                       </div>
                     </div>
               </div>
-              <div class="inline" >
+              <div class="inline">
                   <div class="dropdown">
                       <a class="anchor" style="color: #ec830be8;" id="deals" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
                       <strong>Brand</strong></a>
@@ -127,7 +128,7 @@
                     
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form>
+                        <form name="loginModal">
                             <div  class="input-group1">
                                 <h5 ><strong>Email</strong></h5>
                               <input id="email2" type="text" class="form-control" name="Email" placeholder="Email">
@@ -145,8 +146,45 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Login</button>
+                    <button id="loginButton" type="button" class="btn btn-secondary" data-dismiss="modal" >Login</button>
+
                     </div>
+
+                    <script> 
+
+                        var mail = getCookie("email");
+                        if(mail != ""){
+                          document.forms["loginModal"]["Email"].value = mail;
+                        }
+
+                        function getCookie(cname) {
+                          var name = cname + "=";
+                          var ca = document.cookie.split(';');
+                          for(var i = 0; i < ca.length; i++) {
+                            var c = ca[i];
+                            while (c.charAt(0) == ' ') {
+                              c = c.substring(1);
+                            }
+                            if (c.indexOf(name) == 0) {
+                              return c.substring(name.length, c.length);
+                            }
+                          }
+                          return "";
+                        }
+
+                        $(document).ready(function() {
+                          $("#loginButton").click(function() {
+
+                              var userMail = $("#brandName").val();
+                              var userPass = $("#brandName").val();
+                              document.cookie = "email=" + userMail;
+
+                              $("#userImage").load("../../database/controller/validateUser.php", {email: userMail, password: userPass});
+            
+                          });
+
+                        });
+                    </script>
                     
                 </div>
                 </div>
@@ -157,74 +195,14 @@
             <script>
                   function itemSearch() 
                     {
-                   // var result = document.getElementById("inputsearch").value();
-                   var result = $("#inputsearch").val();
+                        // var result = document.getElementById("inputsearch").value();
+                        var result = $("#inputsearch").val();
                         alert("search "+ result);
-                        
-                        window.location.href ="../rootfolder/satisfiedWork/itemNameCheck.php?name="+result;
+                        window.location.href ="itemNameCheck.php?name="+result;
 
                     }
             </script>
 
-    <!-- <div class="container-fluid">
-
-         
-        <header>
-            <div class="row">
-                <div class="col-sm-2">
-                    <img src="images/logo.png" alt="logo" height="75px">
-                </div>
-    
-                <div class="col-sm-5">
-                    <form class="navbar-form navbar-left" style="padding: 20px; padding-right: 2px;">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </form>
-                </div>
-
-                <div class="col-sm-3">
-                </div>
-    
-                <div class="col-sm-2">
-                    <div style="padding: 20px; padding-right: 2px;">
-                    <a href="" id="signin">Sign In</a>
-                    <a href="" id="signin">Logout</a>
-                    
-                    </div>  
-                </div>
-               
-            </div>
-        </header>
-    
-        <div style="background-color: white; width: 100%;">
-    
-            <div class="row">
-    
-                <div class="col-lg-1"></div>
-    
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
-                    <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                    </ul>
-                </div> 
-    
-                <div><button type="button" class="btn btn-default">Gift Cards</button></div>
-    
-                <div><button type="button" class="btn btn-default">Today's Deal</button></div>
-    
-                <div><button type="button" class="btn btn-default">Help and Community</button></div>
-    
-                <div><button type="button" class="btn btn-default">Tools</button></div>
-    
-            </div>
-        </div>
-    
-     </div> -->
 
      </body>
 </html>

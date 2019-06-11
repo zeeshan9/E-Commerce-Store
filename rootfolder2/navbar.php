@@ -37,7 +37,7 @@
         <!-- </form> -->
         </div>
 
-            <div class="col-sm1 row-1">
+            <div id="userImage" class="col-sm-1 row-1">
               <img class="" src="../images/orangecart.png" alt="cart img" style="height: 50px; width: 50px;"> 
             </div>
       </div>
@@ -127,7 +127,7 @@
                     
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form>
+                        <form name="loginModal">
                             <div  class="input-group1">
                                 <h5 ><strong>Email</strong></h5>
                               <input id="email2" type="text" class="form-control" name="Email" placeholder="Email">
@@ -145,8 +145,44 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Login</button>
+                    <button id="loginButton" type="button" class="btn btn-secondary" data-dismiss="modal" >Login</button>
                     </div>
+
+                    <script> 
+
+                        var mail = getCookie("email");
+                        if(mail != ""){
+                          document.forms["loginModal"]["Email"].value = mail;
+                        }
+
+                        function getCookie(cname) {
+                          var name = cname + "=";
+                          var ca = document.cookie.split(';');
+                          for(var i = 0; i < ca.length; i++) {
+                            var c = ca[i];
+                            while (c.charAt(0) == ' ') {
+                              c = c.substring(1);
+                            }
+                            if (c.indexOf(name) == 0) {
+                              return c.substring(name.length, c.length);
+                            }
+                          }
+                          return "";
+                        }
+
+                        $(document).ready(function() {
+                            $("#loginButton").click(function() {
+
+                                var userMail = $("#brandName").val();
+                                var userPass = $("#brandName").val();
+                                document.cookie = "email=" + userMail;
+
+                                $("#userImage").load("../database/controller/validateUser.php", {email: userMail, password: userPass});
+            
+                            });
+
+                        });
+                    </script>
                     
                 </div>
                 </div>

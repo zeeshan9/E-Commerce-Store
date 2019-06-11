@@ -25,13 +25,22 @@ class Product {
     }
 
 
-    public function InsertNewProduct($id, $name, $price, $stock, $picture, $product_des, $manufacturer_des, $product_type_id, $brand_id, $warrenty_id) 
-    {
-        $id=null;
-        $sql = $this->pdo->prepare("insert into product values('$id','$name','$price','$stock','$picture',
-        '$product_des','$manufacturer_des','$product_type_id','$brand_id','$warrenty_id')");
-        $sql->execute();
+
+    public function InsertNewProduct($id, $name, $price, $stock, $picture, $product_des, $manufacturer_des, $product_type_id, $brand_id, $warrenty_id){
         
+        $id=null;
+        $sql = $this->pdo->prepare("insert into product values (:id, :name, :price, :stock, :picture, :product_des, :manufacturer_des, :product_type_id, :brand_id, :warrenty_id)");
+        $sql->bindParam(':id', $id);
+        $sql->bindParam(':name', $name);
+        $sql->bindParam(':price', $price);
+        $sql->bindParam(':stock', $stock);
+        $sql->bindParam(':picture', $picture);
+        $sql->bindParam(':product_des', $product_des);
+        $sql->bindParam(':manufacturer_des', $manufacturer_des);
+        $sql->bindParam(':product_type_id', $product_type_id);
+        $sql->bindParam(':brand_id', $brand_id);
+        $sql->bindParam(':warrenty_id', $warrenty_id);
+        $sql->execute();
     }
 
     public function UpdateProductInfo($id, $name, $price, $product_des, $manufacturer_des) 
@@ -96,6 +105,15 @@ class Product {
     public function GetSingleRecord($id) 
     {
         $sql = "select name,price,stock,picture,product_des,manufacturer_des from product where id='$id'";
+    
+        $result = $this->pdo->query($sql);
+        
+        return $result;
+    }
+
+    public function nameId($name) 
+    {
+        $sql = "select id from product where name='$name'";
     
         $result = $this->pdo->query($sql);
         
