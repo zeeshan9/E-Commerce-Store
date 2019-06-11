@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add New Product</title>
-    <script src="../jquery-3.4.1.min.js"></script>
+    <script src="../../jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="add_res_admin_css.css">
     <link rel="stylesheet" href="../normalized_style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -14,9 +14,13 @@
 <body>
     <div class="container-fluid">
         <!--Nav Bar  -->
+<<<<<<< HEAD
     
+=======
+    <?php require_once("admin_navbar.html"); ?>
+>>>>>>> ahmed
             
-        <form action="../../database/controller/addNewProduct.php" method="POST" enctype="multipart/form-data">
+        <form name="newProductAddition" action="../../database/controller/addNewProduct.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
 
             <div class="panel-group">
 
@@ -35,7 +39,7 @@
                                 <span class="input-group-text" id="basic-addon1">Product Name</span>
                             </div>
                             
-                            <input name="productName" type="text" class="form-control" placeholder="Product Name" aria-label="Productname" aria-describedby="basic-addon1">
+                            <input required maxlength="100" name="productName" type="text" class="form-control" placeholder="Product Name" aria-label="Productname" aria-describedby="basic-addon1">
                         
                         </div>
 
@@ -47,7 +51,7 @@
                                 
                             </div>
 
-                            <input name="productPrice" type="text" class="form-control" placeholder="Rupees" aria-label="Amount (to the nearest rupee)">
+                            <input required maxlength="20" name="productPrice" id="productPrice" type="text" class="form-control" placeholder="Rupees" aria-label="Amount (to the nearest rupee)">
                             
                         </div>
 
@@ -59,7 +63,7 @@
                                 
                             </div>
 
-                            <input name="productStock" type="text" class="form-control" placeholder="Stock" aria-label="Amount (to the nearest rupee)">
+                            <input required maxlength="15" name="productStock" id="productStock" type="text" class="form-control" placeholder="Stock" aria-label="Amount (to the nearest rupee)">
                             
                         </div>
 
@@ -97,6 +101,17 @@
 
                                 <select id="test"  class="custom-select" name="brand" id="brand_type">
                                     <option value="" selected>Select Brand...</option>
+
+                                    <?php
+                                    require_once("../../database/database_connections/selectbrand.php");
+                                    $product_TypeTabel = new brand();
+                                    $result = $product_TypeTabel->GetAllbrands();
+
+                                    while($row = $result->fetch())
+                                    {
+                                        echo "<option value=" . $row["id"] . ">" . $row["name"] . "</option>";
+                                    } 
+                                    ?>
                                     
                                 </select>
                             
@@ -141,14 +156,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Product Desciption</span>
                             </div>
-                            <textarea name="productDes" class="form-control" aria-label="With textarea"></textarea>
+                            <textarea required maxlength="1000" minlength="50" name="productDes" class="form-control" aria-label="With textarea"></textarea>
                         </div>
 
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Manufacturer Desciption</span>
                             </div>
-                            <textarea name="manufacturerDes" class="form-control" aria-label="With textarea"></textarea>
+                            <textarea required maxlength="100" minlength="50" name="manufacturerDes" class="form-control" aria-label="With textarea"></textarea>
                         </div>
 
                     </div>

@@ -17,9 +17,9 @@ class brand {
     }
 
 
-    public function Insert($id,$warrenty_name) {
+    public function Insert($brandName,$product_typeId) {
 
-        $sql = $this->pdo->prepare("insert into brand values('$productTypeId','$name')");
+        $sql = $this->pdo->prepare("insert into brand values(null,'$product_typeId','$brandName')");
         $sql->execute();
         
     }
@@ -39,7 +39,6 @@ class brand {
 
     public function GetAllbrands() {
         $sql = "select * from brand";
-        
         
         $result = $this->pdo->query($sql);
         
