@@ -38,7 +38,7 @@
         </div>
 
             <div class="col-sm-1 row-1">
-              <img class="" src="../images/orangecart.png" alt="cart img" style="height: 50px; width: 50px;"> 
+              <img class="" src="../../images/orangecart.png" alt="cart img" style="height: 50px; width: 50px;"> 
             </div>
       </div>
       </div>
@@ -59,13 +59,13 @@
                       </a>
                       <div class="dropdown-content">
                         <?php
-                            require_once("../database/database_connections/Product_TypeClass.php");
+                            require_once("../../database/database_connections/Product_TypeClass.php");
                             $product_TypeTabel = new Product_Type();
                             $result = $product_TypeTabel->GetAllRecords();
 
                             while($row = $result->fetch())
                             {
-                                echo "<a href='fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
+                                echo "<a href='../../rootfolder2/fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
                              } 
                         ?>
                     
@@ -78,13 +78,13 @@
                       <strong>Brand</strong></a>
                       <div class="dropdown-content">
                       <?php
-                            require_once("../database/database_connections/Product_TypeClass.php");
+                            require_once("../../database/database_connections/Product_TypeClass.php");
                             $product_TypeTabel = new Product_Type();
                             $result = $product_TypeTabel->GetAllRecordsFromBrand();
 
                             while($row = $result->fetch())
                             {
-                                echo "<a href='fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
+                                echo "<a href='../../rootfolder2/fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
                              } 
                         ?>
                       </div>
@@ -101,7 +101,7 @@
             </div>
             <div class="col-md-1">
               <div class="col-md-1" >
-                    <a class="register" href="Signup-Account.html" style="color: #ec830be8;" id="signup" onmouseover="mouseover(this)" onmouseout="mouseout(this)" >
+                    <a class="register" href="../../rootfolder2/Signup-Account.html" style="color: #ec830be8;" id="signup" onmouseover="mouseover(this)" onmouseout="mouseout(this)" >
                         <strong>Signup</strong>
                     </a>
                 </div>
