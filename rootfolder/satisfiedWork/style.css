@@ -172,18 +172,3 @@ m }
  }
  
 a { color: #FF0000; }
-
-/* .defaultimg {
-    position: relative;
-  }
-  .defaultimg:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 10px;
-    height: 41px;
-    width: 95px;
-    background-color: white;
-    background-image:url('../product_images/phone2.jpg');
-  
-  } */

@@ -15,7 +15,7 @@
     <div class="container-fluid">
         <!-- Navigation Bar -->
         <?php
-            require_once("../../navbar.php");
+            require_once("../../rootfolder2/navbar.php");
             $id = $_GET["id"];
         ?>
            
