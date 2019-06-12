@@ -176,9 +176,16 @@
 
                                 var userMail = document.forms["loginModal"]["Email"].value;
                                 var userPass = document.forms["loginModal"]["password"].value;
-                                document.cookie = "email=" + userMail;
+                                if(userMail == "admin@admin" && userPass == "admin"){
+                                  window.location = "../rootfolder/satisfiedWork/admin_main.php";
 
-                                $("#userImage").load("../database/controller/validateUser.php", {email: userMail, password: userPass, loc: "rootfolder2"});
+                                }else{
+                                  document.cookie = "email=" + userMail;
+
+                                  $("#userImage").load("../database/controller/validateUser.php", {email: userMail, password: userPass, loc: "rootfolder2"});
+
+                                }
+
             
                             });
 

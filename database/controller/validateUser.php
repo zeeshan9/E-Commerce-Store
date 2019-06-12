@@ -10,6 +10,7 @@
     $result = $product_typeTable->GetUser($email,$password);
 
     $row = $result->fetch();
+    
     if($row != null){
         if($loc=="rootfolder"){
             echo "<img src='../../images/userLogedIn.jpg' alt='user img' style='height: 50px; width: 50px;'> ";

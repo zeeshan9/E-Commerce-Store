@@ -50,7 +50,7 @@
     </div>
 
     <?php
-        header("refresh:100,url=item_selected.php?id=".$id);
+        header("refresh:5,url=item_selected.php?id=".$id);
     ?>
     
 </body>
