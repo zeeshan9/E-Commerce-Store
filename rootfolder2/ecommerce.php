@@ -30,7 +30,6 @@
                 $manu_desc[$index] = $row["manufacturer_des"];
                 $index++;
               } 
-              // "<img src='../product_images/$img[0]' alt='Product Image' width='100%'>";
               
           ?>
     <div class="container-fluid" id="courasal">
@@ -337,15 +336,6 @@
           </div>
         </div>
       </div>
-        <script>
-          // document.getElementsByClassName('defaultimg').src = "../product_images/trendingstyle.jpg";
-          // var image = document.getElementsByClassName('defaultimg');
-          // if(image.value == null || image.value == ''){
-            // alert("inside if "+ image.value);
-            // document.getElementsByClassName('defaultimg').value = "../product_images/trendingstyle.jpg";
-            // image.src = "../product_images/trendingstyle.jpg";
-          // }
-        </script>
         <script src="ecommerce.js"></script>
     </body>
 </html>

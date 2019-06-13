@@ -17,13 +17,12 @@
 <div class="container-fluid" id="outer-nav">
         <div class="row-2">
             <div class="col-sm-2 row-1">
-            <div class="nav bar-header">
-            <img src="../images/logo.jpg" margin-top="15px" alt="image logo" height="35px">
-                <!-- <img class="navbar-brand" src="../images/add.svg" alt="image logo"> -->
+              <div class="nav bar-header">
+                  <img src="../images/logo.jpg" margin-top="15px" alt="image logo" height="35px">
+              </div>
+            </div>
         </div>
-         </div>
          <div class="col-sm-9 row-1">
-        <!-- <form class="navbar-form navbar-left" > -->
         <div class="navbar-form navbar-left" >
         <div class="input-group">
           <input type="text" class="form-control" id="inputsearch" placeholder="Search" name="search" >
@@ -33,12 +32,11 @@
             </button>
             </div>
           </div>
-</div>
-        <!-- </form> -->
+        </div>
         </div>
 
             <div id="userImage" class="col-sm-1 row-1">
-              <img class="" src="../images/orangecart.png" alt="cart img" style="height: 50px; width: 50px;"> 
+              <img class="" src="../images/questionmark.png" alt="cart img" style="height: 50px; width: 50px;"> 
             </div>
       </div>
       </div>
@@ -54,11 +52,11 @@
               </div>
               <div class="inline" >
                   <div class="dropdown">
-                      <a  class="anchor" style="color: #ec830be8;" id="category" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
-                      <span><strong>Categories</strong></span>
-                      </a>
+                  <a class="anchor"  href="fiter-all-products.php" style="color: #ec830be8;" id="todaydeal" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+                  <strong>Today's Deal</strong>
+                </a>
                       <div class="dropdown-content">
-                        <?php
+                        <!-- <php
                             require_once("../database/database_connections/Product_TypeClass.php");
                             $product_TypeTabel = new Product_Type();
                             $result = $product_TypeTabel->GetAllRecords();
@@ -67,32 +65,15 @@
                             {
                                 echo "<a href='fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
                              } 
-                        ?>
+                        ?>-->
                     
                       </div>
                     </div>
               </div>
-              <div class="inline" >
-                  <div class="dropdown">
-                      <a class="anchor" style="color: #ec830be8;" id="deals" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
-                      <strong>Brand</strong></a>
-                      <div class="dropdown-content">
-                      <?php
-                            require_once("../database/database_connections/Product_TypeClass.php");
-                            $product_TypeTabel = new Product_Type();
-                            $result = $product_TypeTabel->GetAllRecordsFromBrand();
-
-                            while($row = $result->fetch())
-                            {
-                                echo "<a href='fiter-all-products.php?id=" . $row["id"] ."'>" . $row["name"] . "</a>";
-                             } 
-                        ?>
-                      </div>
-                    </div>
-              </div>
+              
               <div class="inline" style="color: slateblue">
-                  <a class="anchor"  href="fiter-all-products.php" style="color: #ec830be8;" id="todaydeal" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
-                  <strong>Today's Deal</strong>
+                  <a class="anchor"  href="../rootfolder/satisfiedWork/add_res_admin.php" style="color: #ec830be8;" id="todaydeal" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+                  <strong>Admin panel</strong>
                 </a>
               </div>
               
@@ -194,7 +175,6 @@
                     {
                      var result = $("#inputsearch").val();
                      window.location.href ="../rootfolder/satisfiedWork/itemNameCheck.php?name="+result;
-                    //  window.location.href ="../rootfolder/satisfiedWork/item_selected.php?name="+result;
 
                     }
             </script>

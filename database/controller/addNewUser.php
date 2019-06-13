@@ -3,9 +3,9 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $name=$_POST["user_name"];
-        $email=$_POST["user_email"];
-        $password=$_POST["password"];
+        $name=$_POST["userName"];
+        $email=$_POST["userEmail"];
+        $password=$_POST["userPass"];
 
         require_once("../database_connections/UserClass.php");
         $userTabel = new User();

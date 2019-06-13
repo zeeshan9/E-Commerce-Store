@@ -9,47 +9,45 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css">     
 
 </head>
 <body>
 
-<div class="container-fluid" id="outer-nav">
-        <div class="row-2">
-            <div class="col-sm-2 row-1">
+<div class="container-fluid" id="outer-nav" >
+        <div class="row" style="padding-top: 7px;">
+        <div class="col-md-2 row-1" >
             <div class="nav bar-header">
-            <img src="../../images/logo.jpg" margin-top="15px" alt="image logo" height="35px">
-                <!-- <img class="navbar-brand" src="../images/add.svg" alt="image logo"> -->
-        </div>
-         </div>
-         <div class="col-sm-9 row-1">
-        <!-- <form class="navbar-form navbar-left" > -->
-        <div class="navbar-form navbar-left" >
-        <div class="input-group">
-          <input type="text" class="form-control" id="inputsearch" placeholder="Search" name="search" >
-          <div class="input-group-btn">
-            <button class="btn btn-default" onclick="itemSearch()">
-              <i class="glyphicon glyphicon-search" ></i>
-            </button>
+              <img src="../../images/logo.jpg" margin-top="15px" alt="image logo" height="35px">
             </div>
-          </div>
-</div>
-        <!-- </form> -->
         </div>
 
-
-            <div id="userImage" class="col-sm-1 row-1">
-              <img class="" src="../../images/orangecart.png" alt="cart img" style="height: 50px; width: 50px;"> 
+         <div class="col-md-8 row-1">
+            <div class="navbar-form navbar-left" >
+                  <div class="input-group" >
+                      <!-- <input type="text" class="form-control" id="inputsearch" placeholder="Search" name="search" >
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" onclick="itemSearch()">
+                          <i class="glyphicon glyphicon-search" ></i>
+                        </button>
+                      </div> -->
+                  </div>
             </div>
+        </div>
+
+        <div id="userImage" class="col-md-2 ow-1">
+           <img class="" src="../../images/questionmark.png" alt="cart img" style="height: 40px; width: 40px; padding=1px;"> 
+        </div>
       </div>
-      </div>
+ </div>
+
 
       <div class="container-fluid" >
           <div class="row" id="top_row" >
             <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-md-9">
             <div class="inline" style="color: slateblue">
-                  <a class="anchor" style="color: #ec830be8;" id="home" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+            <a class="anchor" href="ecommerce.php" style="color: #ec830be8;" id="home" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
                   <strong>Home</strong>
                 </a>
               </div>
@@ -75,8 +73,8 @@
               </div>
               <div class="inline">
                   <div class="dropdown">
-                      <a class="anchor" style="color: #ec830be8;" id="deals" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
-                      <strong>Brand</strong></a>
+                      <!-- <a class="anchor" style="color: #ec830be8;" id="deals" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+                      <strong>Brand</strong></a> -->
                       <div class="dropdown-content">
                       <?php
                             require_once("../../database/database_connections/Product_TypeClass.php");
@@ -100,16 +98,16 @@
               
               <div class=""></div>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-2">
               <div class="col-md-1" >
-                    <a class="register" href="../../rootfolder2/Signup-Account.html" style="color: #ec830be8;" id="signup" onmouseover="mouseover(this)" onmouseout="mouseout(this)" >
-                        <strong>Signup</strong>
+                    <a class="register" href="../../rootfolder2/Signup-Account.html" style="color: #ec830be8; "  id="signup" onmouseover="mouseover(this)" onmouseout="mouseout(this)" >
+                        <label> <strong>Signup</strong>   </label>
                     </a>
                 </div>
-                <div class="col-md-0" id="register1">
-                    <p><a class="register1" style="color: #ec830be8;" id="login" onmouseover="mouseover(this)" onmouseout="mouseout(this)"  data-toggle="modal" data-target="#myModal">
+                <div class="col-md-1 login" id="register1">
+                    <a class="register1" href="" style="color: #ec830be8; " id="login" onmouseover="mouseover(this)" onmouseout="mouseout(this)"  data-toggle="modal" data-target="#myModal">
                         <strong>Login</strong>
-                </a></p>
+                     </a>
                 </div>
             </div>
           
@@ -191,28 +189,14 @@
             
             </div>
 
-            <!-- <script src="ShowSearchProduct.js"></script> -->
             <script>
                   function itemSearch() 
                     {
-                        // var result = document.getElementById("inputsearch").value();
                         var result = $("#inputsearch").val();
-                        alert("search "+ result);
                         window.location.href ="itemNameCheck.php?name="+result;
 
                     }
             </script>
-
-
      </body>
 </html>
-
-
-
-
-
-
-
-
-
 

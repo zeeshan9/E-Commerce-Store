@@ -7,9 +7,7 @@
 }
 .register, .register1 {   
     color: #ec830be8;
-    /* color: linear-gradient(to bottom left, #003366 0%, #33cccc 100%); */
-    /* background: linear-gradient(to bottom left, #13547a 0%, #80d0c7 100%); */
-    /* color: linear-gradient(to bottom left, #13547a, #80d0c7 100%); */
+    
 }
 .register{
     float: right;
@@ -31,7 +29,6 @@ div.inline {
 }
 .navbar-form{
     width: 40%;
-    /* background-color:green;  */
 }
 .input-group{
     width: 170%;
@@ -43,7 +40,6 @@ div.inline {
 }
 
 #courasal{
-    /* height: 20%; */
     max-width: fit-content;
     max-height: fit-content;
 
@@ -66,9 +62,6 @@ div.inline {
   }
 .product-row-boundary{
     margin: 14px;
-    /* margin-left: 60px; */
-    /* margin-right: 20px; */
-    /* background: #424242; */
     padding: 5px;
 
 
@@ -78,7 +71,6 @@ div.inline {
 }
 .pad{
     padding: 5px;
-    /* background: rgb(218, 227, 236) */
 }
 .line{
     float: right;

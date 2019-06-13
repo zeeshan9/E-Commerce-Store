@@ -14,11 +14,7 @@
 <body>
     <div class="container-fluid">
         <!--Nav Bar  -->
-<<<<<<< HEAD
-    
-=======
     <?php require_once("admin_navbar.html"); ?>
->>>>>>> ahmed
             
         <form name="newProductAddition" action="../../database/controller/addNewProduct.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
 

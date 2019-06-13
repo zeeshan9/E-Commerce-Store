@@ -11,6 +11,9 @@
     /* background: linear-gradient(to bottom left, #13547a 0%, #80d0c7 100%); */
     /* color: linear-gradient(to bottom left, #13547a, #80d0c7 100%); */
 }
+.col-md-2 .login {
+    padding-left: 25px;
+}
 .register{
     float: right;
 }
