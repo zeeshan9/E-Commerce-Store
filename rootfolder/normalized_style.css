@@ -59,6 +59,14 @@ html, body{
     background-color: #4267b2;
 }
 
+#checkOutButton :hover{
+    border-color: orange;
+}
+
+#checkOutDiv :hover{
+    border-color: orange;
+}
+
 /* header-bar Styling */
 
 /* #signin{

@@ -14,10 +14,6 @@
     <?php 
         include_once("admin_navbar.html");
     ?>
-
-    <div>
-        asdljfljsdlf
-    </div>
     
 </body>
 </html>

@@ -29,16 +29,8 @@ class User {
         $sql = $this->pdo->prepare("delete from user where id='$id'");
         $sql->execute();
     }
-
-    public function GetUser($userEmail) {
-        $sql = "select name,password from user where email='$userEmail'";
-        $result = $this->pdo->query($sql);
-        
-        return $result;
-    }
-
     public function GetUser($userEmail,$password) {
-        $sql = "select id,name,password from user where email='$userEmail' and password='$password'";
+        $sql = "select id,name,password from user where email='$userEmail' AND password='$password'";
         $result = $this->pdo->query($sql);
         
         return $result;

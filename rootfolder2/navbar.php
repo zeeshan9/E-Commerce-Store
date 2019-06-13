@@ -134,6 +134,7 @@
                         var mail = getCookie("email");
                         if(mail != ""){
                           document.forms["loginModal"]["Email"].value = mail;
+                          
                         }
 
                         function getCookie(cname) {
@@ -154,11 +155,18 @@
                         $(document).ready(function() {
                             $("#loginButton").click(function() {
 
-                                var userMail = $("#brandName").val();
-                                var userPass = $("#brandName").val();
-                                document.cookie = "email=" + userMail;
+                                var userMail = document.forms["loginModal"]["Email"].value;
+                                var userPass = document.forms["loginModal"]["password"].value;
+                                if(userMail == "admin@admin" && userPass == "admin"){
+                                  window.location = "../rootfolder/satisfiedWork/admin_main.php";
 
-                                $("#userImage").load("../database/controller/validateUser.php", {email: userMail, password: userPass});
+                                }else{
+                                  document.cookie = "email=" + userMail;
+
+                                  $("#userImage").load("../database/controller/validateUser.php", {email: userMail, password: userPass, loc: "rootfolder2"});
+
+                                }
+
             
                             });
 

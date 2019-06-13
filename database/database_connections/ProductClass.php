@@ -62,7 +62,7 @@ class Product {
     public function UpdateProductStock($id, $stock)
     {
 
-        $sql = $this->pdo->prepare("update product set picture='$picture' where id='$id'");
+        $sql = $this->pdo->prepare("update product set stock='$stock' where id='$id'");
         $sql->execute();
 
     }
