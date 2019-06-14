@@ -9,7 +9,6 @@ function validateForm() {
     }
     else
     {
-        alert('em:'+emailValidation+"   pass: "+passValidation);
         return false;
     }
 }
@@ -20,7 +19,6 @@ function validatePassword(){
 
     if(pass==match)
     {
-
         return true;
     }
     else

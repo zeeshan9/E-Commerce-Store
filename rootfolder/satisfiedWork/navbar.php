@@ -47,7 +47,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-9">
             <div class="inline" style="color: slateblue">
-            <a class="anchor" href="ecommerce.php" style="color: #ec830be8;" id="home" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+            <a class="anchor" href="../../rootfolder2/ecommerce.php" style="color: #ec830be8;" id="home" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
                   <strong>Home</strong>
                 </a>
               </div>

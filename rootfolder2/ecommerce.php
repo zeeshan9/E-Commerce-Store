@@ -40,7 +40,8 @@
                 <div class="col-md-6 gridimg">  
                 <?php
                     echo '<a class="title" href="../rootfolder/satisfiedWork/item_selected.php?id=15" >';
-                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >"; 
+                    echo "<img  src='../product_images/$img[1]' alt='Product Image' width='100%' >";
+                     
                     echo '</a>'; 
                 ?>
                 
