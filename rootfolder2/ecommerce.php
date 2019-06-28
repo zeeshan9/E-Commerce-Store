@@ -196,7 +196,7 @@
           <!-- Product items -->
           <form action="" >
         <?php 
-        for ($i=2; $i <=7; $i++) { 
+        for ($i=1; $i <7; $i++) { 
           ?>
         
         <div class="col-sm-2 pad">

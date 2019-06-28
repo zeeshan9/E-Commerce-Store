@@ -355,7 +355,7 @@
               </div>
 
                                  <!-- Product item 2 -->
-              <div class="col-md-10" id="parentDiv">
+              <div class="col-md-10" id="parentDiv3">
                              <!-- Product item 2 -->
                   <?php 
                   for ($i=1; $i <= 6; $i++) { 
@@ -423,7 +423,7 @@
               <div class="col-sm-2 pad">
               </div>
                                  <!-- Product item 2 -->
-            <div class="col-md-10" id="parentDiv">
+            <div class="col-md-10" id="parentDiv4">
                              <!-- Product item 2 -->
                   <?php 
                   for ($i=0; $i <= 5; $i++) { 

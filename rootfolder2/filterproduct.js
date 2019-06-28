@@ -75,13 +75,17 @@
                   $("#parentDiv").html("");
                   var count=0;
                   $.each(jsonConverted, function(index, value){
-                      
-                    $("#parentDiv").append(" <div class='col-sm-2 pad'><form action='' ><div class='center-div'><div class='card-jfy-image card-jfy-image-background J_GridImage' id='productimage'><img src='../product_images/"+value["picture"]+"'  alt='Product Image' width='100%'></div><div class='card-jfy-item-desc'><div class='card-jfy-title'><span class='title'  onclick='productDesc(this)'>"+value["name"]+"</span></div><div class='hp-mod-price textstyle'><div class='hp-mod-price-second-line'><span >Rs "+value["price"]+"  -40%</span></div></div><div class='card-jfy-footer'><p class='textstyle'>rating</p></div></div></div></form></div>");
-                    count++;
-                    if(count==3)
+                    
+                    if(count<6)
                     {
-                      break;
+                      $("#parentDiv").append(" <div class='col-sm-2 pad'><form action='' ><div class='center-div'><div class='card-jfy-image card-jfy-image-background J_GridImage' id='productimage'><img src='../product_images/"+value["picture"]+"'  alt='Product Image' width='100%'></div><div class='card-jfy-item-desc'><div class='card-jfy-title'><span class='title'  onclick='productDesc(this)'>"+value["name"]+"</span></div><div class='hp-mod-price textstyle'><div class='hp-mod-price-second-line'><span >Rs "+value["price"]+"  -40%</span></div></div><div class='card-jfy-footer'><p class='textstyle'>rating</p></div></div></div></form></div>");
                     }
+                    else if (count>5)
+                    {
+                      $("#parentDiv2").html("");
+                      $("#parentDiv2").append(" <div class='col-sm-2 pad'><form action='' ><div class='center-div'><div class='card-jfy-image card-jfy-image-background J_GridImage' id='productimage'><img src='../product_images/"+value["picture"]+"'  alt='Product Image' width='100%'></div><div class='card-jfy-item-desc'><div class='card-jfy-title'><span class='title'  onclick='productDesc(this)'>"+value["name"]+"</span></div><div class='hp-mod-price textstyle'><div class='hp-mod-price-second-line'><span >Rs "+value["price"]+"  -40%</span></div></div><div class='card-jfy-footer'><p class='textstyle'>rating</p></div></div></div></form></div>");
+                    }
+                    count++;
                   });
                 });
 
